@@ -14,7 +14,7 @@ This project aims to follow the core concepts of Ionic as closely as possible, w
 
 If you don't know about `@rdlabo/ionic-theme-ios26`, you should definitely give it a try!
 
-👉️[rdlabo-team/ionic-theme-ios26](https://github.com/rdlabo-team/ionic-theme-ios26)
+👉️[rdlabo-dev/ionic-theme-ios26](https://github.com/rdlabo-dev/ionic-theme-ios26)
 
 ### Related Projects
 
