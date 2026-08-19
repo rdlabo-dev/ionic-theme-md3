@@ -2,9 +2,7 @@
 
 A CSS/JS theme library that applies Material Design 3 design system to Ionic applications.
 
-**Documentation:** [Read the full documentation](https://docs.rdlabo.dev/projects/ionic-theme-md3)
-
-![](screenshots/md3.png)
+![Material Design 3 themed Ionic screens with updated components and navigation](https://raw.githubusercontent.com/rdlabo-dev/ionic-theme-md3/v1.1.0/screenshots/md3.png)
 
 DEMO is here: https://ionic-theme-md3.netlify.app/
 
@@ -27,7 +25,11 @@ If you need a more comprehensive Material Design 3 implementation, you may also 
 > **Note:** This theme is purpose-built for compatibility with Ionic's design approach and `@rdlabo/ionic-theme-ios26`; it is not intended as a strict, full MD3 recreation.
 
 
-## Setup
+## Quick start
+
+After [Installation](#installation), import the theme CSS and set `navAnimation` as shown below.
+
+## Installation
 
 This is a CSS theme for extending your Ionic project. It does not work on its own, so use it together with the Ionic Framework.
 
@@ -43,7 +45,6 @@ And import the theme in your project's main CSS file (e.g., `src/styles.scss`).
 @import '@rdlabo/ionic-theme-md3/dist/css/default-variables.css';
 @import '@rdlabo/ionic-theme-md3/dist/css/ionic-theme-md3.css';
 ```
-
 
 Next, configure the animations for MD3. Add the following to your Ionic configuration options.
 
@@ -70,6 +71,14 @@ createApp(App)
         navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
 })
 ```
+
+
+## Documentation
+
+Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-theme-ios26](https://docs.rdlabo.dev/projects/ionic-theme-ios26) when you need both platforms from one markup tree.
+
+<!-- rdlabo-docs-omit -->
+**Full documentation:** [https://docs.rdlabo.dev/projects/ionic-theme-md3](https://docs.rdlabo.dev/projects/ionic-theme-md3)
 
 ## Development & Testing
 
@@ -104,3 +113,4 @@ npm run test:e2e:debug
 # Update baseline screenshots (when intentionally changing UI)
 npm run test:e2e:update
 ```
+<!-- /rdlabo-docs-omit -->
