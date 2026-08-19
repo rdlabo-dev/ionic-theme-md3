@@ -75,7 +75,7 @@ createApp(App)
 
 ## Documentation
 
-Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-theme-ios26](/ionic-theme-ios26/) when you need both platforms from one markup tree.
+Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-theme-ios26](https://docs.rdlabo.dev/projects/ionic-theme-ios26) when you need both platforms from one markup tree.
 
 <!-- rdlabo-docs-omit -->
 **Full documentation:** [https://docs.rdlabo.dev/projects/ionic-theme-md3](https://docs.rdlabo.dev/projects/ionic-theme-md3)

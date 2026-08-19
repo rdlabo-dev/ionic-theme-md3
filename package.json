@@ -17,8 +17,7 @@
   "files": [
     "dist",
     "src",
-    "package.json",
-    "docs"
+    "package.json"
   ],
   "scripts": {
     "build": "npm run build:css && npm run build:ts",
