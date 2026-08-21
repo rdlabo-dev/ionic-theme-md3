@@ -5,6 +5,9 @@ ion-modal.md:not(.md3-disabled) {
   }
   ion-toolbar {
     --min-height: 64px;
+    &:first-of-type {
+      padding-top: calc(var(--ion-safe-area-top, 0) + 6px);
+    }
     padding-right: var(--ion-safe-area-right);
     padding-left: var(--ion-safe-area-left);
 
@@ -24,12 +27,11 @@ ion-modal.md:not(.md3-disabled) {
 
   &.modal-sheet {
     --border-radius: 30px;
+
     ion-toolbar {
       &:first-of-type {
-        padding-top: 0;
+        padding-top: 6px;
       }
-      padding-right: calc(var(--ion-safe-area-right) + 4px);
-      padding-left: calc(var(--ion-safe-area-left) + 4px);
     }
   }
 }
