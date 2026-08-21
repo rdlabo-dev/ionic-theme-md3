@@ -23,16 +23,22 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 24
-          cache: npm
-          cache-dependency-path: '**/package-lock.json'
+      - uses: actions/cache@v5
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - run: npm ci
-      - run: npm install --no-save --package-lock=false @ionic/angular@${{ matrix.ionic-version }} @ionic/core@${{ matrix.ionic-version }}
+      - if: matrix.ionic-major == 8
+        run: npm install --no-save --package-lock=false @ionic/angular@${{ matrix.ionic-version }} @ionic/core@${{ matrix.ionic-version }}
       - run: npm run build
 
       - run: npm ci
         working-directory: './demo'
-      - run: npm install --no-save --package-lock=false @ionic/angular@${{ matrix.ionic-version }} @ionic/core@${{ matrix.ionic-version }}
+      - if: matrix.ionic-major == 8
+        run: npm install --no-save --package-lock=false @ionic/angular@${{ matrix.ionic-version }} @ionic/core@${{ matrix.ionic-version }}
         working-directory: './demo'
 
       - name: Run Playwright tests
