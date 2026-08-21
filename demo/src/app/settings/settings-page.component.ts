@@ -20,8 +20,9 @@ import {
   IonToggle,
   IonToolbar,
   Platform,
+  IonListHeader,
+  IonText,
 } from '@demo/ionic';
-import { IonListHeader, IonText } from '@ionic/angular';
 
 @Component({
   selector: 'app-settings-page',
