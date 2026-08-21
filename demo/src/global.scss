@@ -57,10 +57,7 @@ html.ionic-v8 {
 
   ion-textarea {
     --padding-bottom: 8px;
-
-    &:is(.textarea-label-placement-stacked, .textarea-label-placement-floating) {
-      block-size: 68px;
-    }
+    block-size: 72px;
   }
 
   ion-alert {
