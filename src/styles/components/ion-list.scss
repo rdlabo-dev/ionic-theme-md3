@@ -6,7 +6,7 @@ ion-list.md:not(.md3-disabled):not(.list-inset) {
 }
 
 ion-list.md:not(.md3-disabled).list-inset {
-  @include theme-list-inset.ion-list-inset();
+  @include theme-list-inset.ion-list-inset(8px);
 
   ion-item-group > ion-item {
     --border-color: var(--ion-color-light, #fff);

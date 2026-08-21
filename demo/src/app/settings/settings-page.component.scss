@@ -6,9 +6,14 @@ ion-list.list-inset {
   margin-bottom: 32px;
 }
 
+ion-item > ion-icon[slot='start'] {
+  color: var(--ion-background-color, #fff);
+}
+
 .support-ios-structured {
   ion-item > ion-icon[slot='start'] {
     padding: 4px;
+    font-size: 1.3rem;
     margin-right: 14px;
     border-radius: 8px;
   }
