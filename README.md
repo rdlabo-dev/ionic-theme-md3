@@ -80,6 +80,7 @@ Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-th
 
 <!-- rdlabo-docs-omit -->
 
+- [Migration](./docs/migration.md) — changes required when updating theme markup.
 - [Breaking changes](./docs/breaking.md) — changes required when upgrading major versions.
 
 <!-- /rdlabo-docs-omit -->
