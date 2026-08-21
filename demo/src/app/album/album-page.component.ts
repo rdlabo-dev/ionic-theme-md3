@@ -14,7 +14,7 @@ import {
   IonTitle,
   IonToolbar,
   ViewDidEnter,
-} from '@ionic/angular/standalone';
+} from '@demo/ionic';
 
 @Component({
   selector: 'app-album-page',

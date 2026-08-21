@@ -11,7 +11,7 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-} from '@ionic/angular/standalone';
+} from '@demo/ionic';
 
 @Component({
   selector: 'app-tabs',

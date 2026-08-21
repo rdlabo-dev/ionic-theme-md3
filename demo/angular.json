@@ -60,6 +60,14 @@
             },
             "ci": {
               "progress": false
+            },
+            "ionic8": {
+              "fileReplacements": [
+                {
+                  "replace": "src/ionic/ionic.ts",
+                  "with": "src/ionic/ionic.v8.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -75,6 +83,9 @@
             },
             "ci": {
               "progress": false
+            },
+            "ionic8": {
+              "buildTarget": "app:build:ionic8"
             }
           },
           "defaultConfiguration": "development"
