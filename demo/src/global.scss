@@ -40,6 +40,41 @@
 @use '../../src/styles/ionic-theme-md3';
 @use '../../src/styles/md-remove-ios-class-effect';
 
+// Align Ionic 8 demo layout with the Ionic 9 screenshot baseline.
+html.ionic-v8 {
+  ion-input:is(.input-label-placement-start, .input-label-placement-end, .input-label-placement-fixed),
+  ion-textarea:is(.textarea-label-placement-start, .textarea-label-placement-end, .textarea-label-placement-fixed) {
+    .native-wrapper {
+      flex: 1 1 0;
+    }
+  }
+
+  ion-input:is(.input-label-placement-stacked, .input-label-placement-floating) {
+    .native-input {
+      margin-block-start: 0;
+    }
+  }
+
+  ion-textarea {
+    --padding-bottom: 8px;
+    block-size: 72px;
+  }
+
+  ion-alert {
+    .alert-head {
+      padding-inline: 24px;
+    }
+
+    .alert-radio-label {
+      padding-inline: 56px 24px;
+    }
+
+    .alert-radio-icon {
+      inset-inline-start: 24px;
+    }
+  }
+}
+
 code {
   font-family: Menlo, Consolas, monospace;
 }

@@ -14,7 +14,7 @@ import {
   IonText,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@demo/ionic';
 
 @Component({
   selector: 'app-checkbox',

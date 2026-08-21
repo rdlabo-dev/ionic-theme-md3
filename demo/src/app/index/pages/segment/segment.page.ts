@@ -19,7 +19,7 @@ import {
   IonToolbar,
   ViewDidEnter,
   ViewDidLeave,
-} from '@ionic/angular/standalone';
+} from '@demo/ionic';
 
 @Component({
   selector: 'app-segment',

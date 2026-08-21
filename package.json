@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/rdlabo-dev/ionic-theme-md3#readme",
   "devDependencies": {
-    "@ionic/angular": "^8.8.0",
+    "@ionic/angular": "^9.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.1",
     "np": "^10.2.0",
@@ -56,6 +56,6 @@
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "@ionic/core": ">= 8.8.0"
+    "@ionic/core": ">=8.8.0 <10"
   }
 }

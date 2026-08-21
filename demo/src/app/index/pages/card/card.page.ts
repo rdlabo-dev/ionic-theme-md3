@@ -20,7 +20,7 @@ import {
   IonThumbnail,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@demo/ionic';
 
 @Component({
   selector: 'app-card',

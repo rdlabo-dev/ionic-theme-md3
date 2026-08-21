@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar, Platform } from '@ionic/angular/standalone';
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar, Platform } from '@demo/ionic';
 
 @Component({
   selector: 'app-docs-page',
