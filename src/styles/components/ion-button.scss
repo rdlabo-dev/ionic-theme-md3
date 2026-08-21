@@ -37,6 +37,10 @@
     &::part(native) {
       height: 32px;
     }
+    &.button-has-icon-only {
+      width: 32px;
+      height: 32px;
+    }
     &.button-has-icon-only::part(native) {
       width: 32px;
       height: 32px;
@@ -59,6 +63,10 @@
     --padding-end: 24px;
 
     &::part(native) {
+      height: 56px;
+    }
+    &.button-has-icon-only {
+      width: 56px;
       height: 56px;
     }
     &.button-has-icon-only::part(native) {
