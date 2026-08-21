@@ -24,7 +24,6 @@ If you need a more comprehensive Material Design 3 implementation, you may also 
 
 > **Note:** This theme is purpose-built for compatibility with Ionic's design approach and `@rdlabo/ionic-theme-ios26`; it is not intended as a strict, full MD3 recreation.
 
-
 ## Quick start
 
 After [Installation](#installation), import the theme CSS and set `navAnimation` as shown below.
@@ -72,12 +71,21 @@ createApp(App)
 })
 ```
 
-
 ## Documentation
 
 Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-theme-ios26](https://docs.rdlabo.dev/projects/ionic-theme-ios26) when you need both platforms from one markup tree.
 
+- [Special markup](./docs/special-markup.md) — opt-in component combinations used by the demo.
+- [Using ion-item-group](./docs/using-ion-item-group.md) — shared inset-list markup for iOS 26 and MD3.
+
 <!-- rdlabo-docs-omit -->
+
+- [Breaking changes](./docs/breaking.md) — changes required when upgrading major versions.
+
+<!-- /rdlabo-docs-omit -->
+
+<!-- rdlabo-docs-omit -->
+
 **Full documentation:** [https://docs.rdlabo.dev/projects/ionic-theme-md3](https://docs.rdlabo.dev/projects/ionic-theme-md3)
 
 ## Development & Testing
@@ -118,4 +126,5 @@ npm run test:e2e:debug
 # Update baseline screenshots (when intentionally changing UI)
 npm run test:e2e:update
 ```
+
 <!-- /rdlabo-docs-omit -->
