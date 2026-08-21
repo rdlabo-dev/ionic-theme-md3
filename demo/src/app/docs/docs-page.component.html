@@ -17,4 +17,34 @@
     <code class="code-block">% npm install &#64;rdlabo/ionic-theme-md3 --save</code>
     <p>For detailed usage instructions, please refer to the README in the GitHub repository.</p>
   </section>
+
+  <ion-list [inset]="true">
+    <ion-list-header><ion-label>Special Coding</ion-label><ion-note>Mode more iOS26</ion-note></ion-list-header>
+
+    <ion-item-group>
+      <ion-item>
+        <div class="ion-padding-bottom">
+          <h3><code>ion-list[inset] ion-label + ion-note</code></h3>
+          <p>
+            When an inset list item contains an <code>ion-label</code> and an <code>ion-note</code> without slots, they are displayed
+            vertically as a two-line item.
+          </p>
+          <code class="code-block">
+            &lt;ion-list [inset]="true"&gt;<br />
+            &nbsp;&nbsp;&lt;ion-item&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;ion-label&gt;Network &amp; internet&lt;/ion-label&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;ion-note&gt;Mobile, Wi-Fi, hotspot&lt;/ion-note&gt;<br />
+            &nbsp;&nbsp;&lt;/ion-item&gt;<br />
+            &lt;/ion-list&gt;
+          </code>
+          <ion-list [inset]="true">
+            <ion-item color="light">
+              <ion-label>Network & internet</ion-label>
+              <ion-note>Mobile, Wi-Fi, hotspot</ion-note>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
 </ion-content>

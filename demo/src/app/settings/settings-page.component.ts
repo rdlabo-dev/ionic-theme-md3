@@ -20,6 +20,8 @@ import {
   IonToggle,
   IonToolbar,
   Platform,
+  IonListHeader,
+  IonText,
 } from '@demo/ionic';
 
 @Component({
@@ -45,6 +47,8 @@ import {
     IonNote,
     IonItemGroup,
     IonToggle,
+    IonText,
+    IonListHeader,
   ],
 })
 export class SettingsPage {
