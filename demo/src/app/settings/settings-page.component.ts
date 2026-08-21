@@ -21,6 +21,7 @@ import {
   IonToolbar,
   Platform,
 } from '@demo/ionic';
+import { IonListHeader, IonText } from '@ionic/angular';
 
 @Component({
   selector: 'app-settings-page',
@@ -45,6 +46,8 @@ import {
     IonNote,
     IonItemGroup,
     IonToggle,
+    IonText,
+    IonListHeader,
   ],
 })
 export class SettingsPage {

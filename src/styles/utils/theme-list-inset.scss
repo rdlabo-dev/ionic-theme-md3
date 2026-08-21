@@ -64,6 +64,29 @@
     }
 
     ion-item {
+      &:has(> ion-label:not([slot])):has(> ion-note:not([slot])) {
+        &::part(container) {
+          flex-direction: column;
+          justify-content: center;
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+        & > ion-label,
+        & > ion-note {
+          width: auto;
+          align-self: flex-start;
+        }
+        & > ion-label {
+          margin: 0;
+          font-size: 1.2rem;
+          transform: translateY(2px);
+        }
+        & > ion-note {
+          font-size: 0.9rem;
+          transform: translateY(-2px);
+        }
+      }
+
       ion-text[slot='end'] {
         padding-left: 8px;
       }
