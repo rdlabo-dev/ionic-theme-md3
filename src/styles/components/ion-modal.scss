@@ -9,6 +9,8 @@ ion-modal.md:not(.md3-disabled) {
     padding-left: var(--ion-safe-area-left);
 
     ion-button.button-has-icon-only {
+      width: 48px;
+      height: 48px;
       &::part(native) {
         width: 48px;
         height: 48px;
