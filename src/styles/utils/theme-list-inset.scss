@@ -1,4 +1,4 @@
-@mixin ion-list-inset() {
+@mixin ion-list-inset($note-inset) {
   background: transparent;
 
   ion-list-header {
@@ -119,6 +119,6 @@
     color: var(--ion-color-medium-tint);
     font-size: 0.9rem;
     display: block;
-    margin: 8px calc(var(--ion-safe-area-right, 0) + 4px) 8px calc(var(--ion-safe-area-left, 0) + 4px);
+    margin: 8px calc(var(--ion-safe-area-right, 0) + $note-inset) 8px calc(var(--ion-safe-area-left, 0) + $note-inset);
   }
 }
