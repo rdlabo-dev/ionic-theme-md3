@@ -4,7 +4,7 @@ A CSS/JS theme library that applies Material Design 3 design system to Ionic app
 
 ![Material Design 3 themed Ionic screens with updated components and navigation](https://raw.githubusercontent.com/rdlabo-dev/ionic-theme-md3/v1.1.0/screenshots/md3.png)
 
-DEMO is here: https://ionic-theme-md3.netlify.app/
+DEMO is here: https://ionic-theme-md3.rdlabo.dev/
 
 ## Overview
 
@@ -84,7 +84,12 @@ Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-th
 
 ### Demo Application
 
-The `demo/` directory contains an Angular application for testing and demonstrating the theme. To run the demo:
+The same demo is deployed against both supported Ionic versions:
+
+- [Ionic 9 demo](https://ionic-theme-md3.rdlabo.dev) — canonical
+- [Ionic 8 demo](https://ionic8-theme-md3.rdlabo.dev) — compatibility
+
+The `demo/` directory contains the Angular application used by both deployments. To run it locally:
 
 ```bash
 cd demo
