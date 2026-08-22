@@ -2,7 +2,7 @@
 
 A CSS/JS theme library that applies Material Design 3 design system to Ionic applications.
 
-![Material Design 3 themed Ionic screens with updated components and navigation](https://raw.githubusercontent.com/rdlabo-dev/ionic-theme-md3/v2.0.0-1/screenshots/md3.png)
+![Material Design 3 themed Ionic screens with updated components and navigation](https://raw.githubusercontent.com/rdlabo-dev/ionic-theme-md3/v2.0.0/screenshots/md3.png)
 
 DEMO is here: https://ionic-theme-md3.rdlabo.dev/
 
@@ -134,11 +134,7 @@ Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-th
 - [Special markup](./docs/special-markup.md) — opt-in component combinations used by the demo.
 - [Using ion-item-group](./docs/using-ion-item-group.md) — shared inset-list markup for iOS 26 and MD3.
 
-<!-- rdlabo-docs-omit -->
-
 - [Migration](./docs/migration.md) — changes required when updating theme markup.
-
-<!-- /rdlabo-docs-omit -->
 
 <!-- rdlabo-docs-omit -->
 
