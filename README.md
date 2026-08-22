@@ -71,7 +71,7 @@ The example uses Ionic's class-based dark mode. Your global stylesheet must also
 Configure both transition implementations when both themes are installed:
 
 ```ts
-import { isPlatform } from '@ionic/core'; // or @ionic/angular/standalone, @ionic/react, @ionic/vue
+import { isPlatform } from '@ionic/core'; // or @ionic/angular (Ionic 9), @ionic/angular/standalone (Ionic 8), @ionic/react, @ionic/vue
 import { iosTransitionAnimation, popoverEnterAnimation, popoverLeaveAnimation } from '@rdlabo/ionic-theme-ios26';
 import { mdTransitionAnimation } from '@rdlabo/ionic-theme-md3';
 
@@ -104,7 +104,7 @@ createApp(App)
 If you installed only the MD3 theme, configure its animation as follows.
 
 ```ts
-import { isPlatform } from '@ionic/core'; // or @ionic/angular/standalone, @ionic/react, @ionic/vue
+import { isPlatform } from '@ionic/core'; // or @ionic/angular (Ionic 9), @ionic/angular/standalone (Ionic 8), @ionic/react, @ionic/vue
 import { mdTransitionAnimation } from '@rdlabo/ionic-theme-md3';
 
 // Angular
