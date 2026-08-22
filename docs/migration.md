@@ -4,7 +4,11 @@ title: Migration
 
 # Migration
 
-## Rename `.header-item-group` to `.item-group-header`
+Use the section for the version you are upgrading to. Each section lists only the changes that require application code or configuration updates.
+
+## Migrating to 2.0.0
+
+### Rename `.header-item-group` to `.item-group-header`
 
 The class for an `ion-item-group` used as a section header has been renamed for consistency with the element it modifies. Replace every occurrence of `.header-item-group` in application templates and styles.
 
