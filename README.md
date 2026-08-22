@@ -134,11 +134,7 @@ Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-th
 - [Special markup](./docs/special-markup.md) — opt-in component combinations used by the demo.
 - [Using ion-item-group](./docs/using-ion-item-group.md) — shared inset-list markup for iOS 26 and MD3.
 
-<!-- rdlabo-docs-omit -->
-
 - [Migration](./docs/migration.md) — changes required when updating theme markup.
-
-<!-- /rdlabo-docs-omit -->
 
 <!-- rdlabo-docs-omit -->
 
