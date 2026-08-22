@@ -36,6 +36,8 @@ Add `.button-square` when a button should use more squared corners. It works wit
 
 Add `.item-group-header` to an `ion-item-group` to create the centered icon, title, and description used at the top of the component demo pages.
 
+This is an introductory group. Place regular list items in a separate `ion-item-group` that follows it.
+
 ```html preview
 <ion-list inset="true">
   <ion-item-group class="item-group-header">
@@ -46,6 +48,9 @@ Add `.item-group-header` to an `ion-item-group` to create the centered icon, tit
         <ion-text>Inset-list examples</ion-text>
       </ion-label>
     </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item><ion-label>First item</ion-label></ion-item>
   </ion-item-group>
 </ion-list>
 ```
