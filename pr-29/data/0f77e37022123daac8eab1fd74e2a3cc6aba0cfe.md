@@ -1,0 +1,263 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e5]:
+  - generic:
+    - navigation "menu" [ref=e6]:
+      - list [ref=e11]:
+        - group [ref=e12]:
+          - listitem [ref=e13]:
+            - link "Index" [ref=e14] [cursor=pointer]:
+              - /url: /main/index
+              - img [ref=e15]:
+                - img [ref=e17]
+              - generic [ref=e23]: Index
+          - listitem [ref=e24]:
+            - link "Docs" [ref=e25] [cursor=pointer]:
+              - /url: /main/docs
+              - img [ref=e26]:
+                - img [ref=e28]
+              - generic [ref=e35]: Docs
+          - listitem [ref=e36]:
+            - link "Library" [ref=e37] [cursor=pointer]:
+              - /url: /main/album
+              - img [ref=e38]:
+                - img [ref=e40]
+              - generic [ref=e45]: Library
+          - listitem [ref=e46]:
+            - link "Settings" [ref=e47] [cursor=pointer]:
+              - /url: /main/settings
+              - img [ref=e48]:
+                - img [ref=e50]
+              - generic [ref=e55]: Settings
+    - generic [ref=e57]:
+      - generic [ref=e60]:
+        - banner [ref=e61]:
+          - generic [ref=e63]:
+            - button "back" [ref=e65] [cursor=pointer]:
+              - generic [ref=e66]:
+                - img:
+                  - generic:
+                    - img
+            - generic [ref=e69]:
+              - generic: inputs
+        - main [ref=e70]:
+          - generic [ref=e72]:
+            - generic:
+              - list [ref=e73]:
+                - group [ref=e74]:
+                  - listitem [ref=e75]:
+                    - generic [ref=e79]:
+                      - img [ref=e80]:
+                        - img [ref=e82]
+                      - heading "inputs" [level=2] [ref=e85]
+                      - code [ref=e87]: This page is a component demo for @rdlabo/ionic-theme-md3.
+              - list [ref=e88]:
+                - group [ref=e89]:
+                  - listitem [ref=e90]:
+                    - generic [ref=e96]:
+                      - generic:
+                        - generic: Default label
+                      - textbox "Default label" [ref=e98]:
+                        - /placeholder: Enter text
+                  - listitem [ref=e99]:
+                    - generic [ref=e105]:
+                      - generic:
+                        - generic: Fixed label
+                      - textbox "Fixed label" [ref=e107]:
+                        - /placeholder: Enter text
+                  - listitem [ref=e108]:
+                    - generic [ref=e114]:
+                      - generic:
+                        - generic: Stacked label
+                      - textbox "Stacked label" [ref=e116]:
+                        - /placeholder: Enter text
+                  - listitem [ref=e117]:
+                    - generic [ref=e123]:
+                      - generic:
+                        - generic: Floating label
+                      - textbox "Floating label" [ref=e125]:
+                        - /placeholder: Enter text
+                  - listitem [ref=e126]:
+                    - generic [ref=e130]:
+                      - generic [ref=e132]:
+                        - generic:
+                          - generic: Helper text
+                        - textbox "Helper text" [ref=e134]:
+                          - /placeholder: Enter text
+                      - generic [ref=e136]: This is helper text
+                  - listitem [ref=e137]:
+                    - generic [ref=e141]:
+                      - generic [ref=e143]:
+                        - generic:
+                          - generic: Error text
+                        - textbox "Error text" [ref=e145]:
+                          - /placeholder: Enter text
+                      - alert [ref=e147]: This is error text
+                  - listitem [ref=e148]:
+                    - generic [ref=e153]:
+                      - generic [ref=e154]:
+                        - generic:
+                          - generic: Password
+                        - textbox "Password" [ref=e156]:
+                          - /placeholder: ""
+                          - text: NeverGonnaGiveYouUp
+                      - button "Show password" [ref=e160] [cursor=pointer]:
+                        - generic [ref=e161]:
+                          - generic:
+                            - img:
+                              - generic:
+                                - img
+              - list [ref=e162]:
+                - group [ref=e163]:
+                  - listitem [ref=e164]:
+                    - generic [ref=e170]:
+                      - generic:
+                        - generic: Default label
+                      - textbox "Default label" [ref=e172]:
+                        - /placeholder: Enter textarea
+                  - listitem [ref=e173]:
+                    - generic [ref=e179]:
+                      - generic:
+                        - generic: Fixed label
+                      - textbox "Fixed label" [ref=e181]:
+                        - /placeholder: Enter textarea
+                  - listitem [ref=e182]:
+                    - generic [ref=e188]:
+                      - generic:
+                        - generic: Stacked label
+                      - textbox "Stacked label" [ref=e190]:
+                        - /placeholder: Enter textarea
+                  - listitem [ref=e191]:
+                    - generic [ref=e197]:
+                      - generic:
+                        - generic: Floating label
+                      - textbox "Floating label" [ref=e199]:
+                        - /placeholder: Enter textarea
+                  - listitem [ref=e200]:
+                    - generic [ref=e204]:
+                      - generic [ref=e206]:
+                        - generic:
+                          - generic: Helper text
+                        - textbox "Helper text" [ref=e208]:
+                          - /placeholder: Enter textarea
+                      - generic [ref=e210]: This is helper text
+                  - listitem [ref=e211]:
+                    - generic [ref=e215]:
+                      - generic [ref=e217]:
+                        - generic:
+                          - generic: Error text
+                        - textbox "Error text" [ref=e219]:
+                          - /placeholder: Enter textarea
+                      - alert [ref=e221]: This is error text
+              - list [ref=e222]:
+                - group [ref=e223]:
+                  - listitem [ref=e224]:
+                    - generic [ref=e229]:
+                      - generic [ref=e231]:
+                        - generic: Outline input
+                      - generic [ref=e232]:
+                        - generic:
+                          - generic: Outline input
+                        - textbox "Outline input" [ref=e234]:
+                          - /placeholder: Enter text
+                - group [ref=e235]:
+                  - listitem [ref=e236]:
+                    - generic [ref=e241]:
+                      - generic [ref=e243]:
+                        - generic: Outline textarea
+                      - generic [ref=e244]:
+                        - generic:
+                          - generic: Outline textarea
+                        - textbox "Outline textarea" [ref=e246]:
+                          - /placeholder: Enter textarea
+                - group [ref=e247]:
+                  - listitem [ref=e248]:
+                    - generic [ref=e253]:
+                      - generic [ref=e255]:
+                        - generic: Outline input
+                      - generic [ref=e256]:
+                        - generic:
+                          - generic: Outline input
+                        - textbox "Outline input" [ref=e258]:
+                          - /placeholder: Enter text
+                  - listitem [ref=e259]:
+                    - generic [ref=e263]:
+                      - generic [ref=e264]:
+                        - generic [ref=e266]:
+                          - generic: Outline helper text
+                        - generic [ref=e267]:
+                          - generic:
+                            - generic: Outline helper text
+                          - textbox "Outline helper text" [ref=e269]:
+                            - /placeholder: Enter text
+                      - generic [ref=e271]: This is helper text
+                  - listitem [ref=e272]:
+                    - generic [ref=e276]:
+                      - generic [ref=e277]:
+                        - generic [ref=e279]:
+                          - generic: Outline error text
+                        - generic [ref=e280]:
+                          - generic:
+                            - generic: Outline error text
+                          - textbox "Outline error text" [ref=e282]:
+                            - /placeholder: Enter text
+                      - alert [ref=e284]: This is error text
+                  - listitem [ref=e285]:
+                    - generic [ref=e290]:
+                      - generic [ref=e292]:
+                        - generic: Outline textarea
+                      - generic [ref=e293]:
+                        - generic:
+                          - generic: Outline textarea
+                        - textbox "Outline textarea" [ref=e295]:
+                          - /placeholder: Enter textarea
+                  - listitem [ref=e296]:
+                    - generic [ref=e300]:
+                      - generic [ref=e301]:
+                        - generic [ref=e303]:
+                          - generic: Outline helper text
+                        - generic [ref=e304]:
+                          - generic:
+                            - generic: Outline helper text
+                          - textbox "Outline helper text" [ref=e306]:
+                            - /placeholder: Enter textarea
+                      - generic [ref=e308]: This is helper text
+                  - listitem [ref=e309]:
+                    - generic [ref=e313]:
+                      - generic [ref=e314]:
+                        - generic [ref=e316]:
+                          - generic: Outline error text
+                        - generic [ref=e317]:
+                          - generic:
+                            - generic: Outline error text
+                          - textbox "Outline error text" [ref=e319]:
+                            - /placeholder: Enter textarea
+                      - alert [ref=e321]: This is error text
+      - tablist [ref=e322]:
+        - generic:
+          - tab "Index" [selected] [ref=e324] [cursor=pointer]:
+            - generic [ref=e325]:
+              - generic:
+                - img [ref=e326]:
+                  - img [ref=e328]
+                - generic [ref=e332]: Index
+          - tab "Docs" [ref=e334] [cursor=pointer]:
+            - generic [ref=e335]:
+              - generic:
+                - img [ref=e336]:
+                  - img [ref=e338]
+                - generic [ref=e343]: Docs
+          - tab "Library" [ref=e345] [cursor=pointer]:
+            - generic [ref=e346]:
+              - generic:
+                - img [ref=e347]:
+                  - img [ref=e349]
+                - generic [ref=e352]: Library
+          - tab "Settings" [ref=e354] [cursor=pointer]:
+            - generic [ref=e355]:
+              - generic:
+                - img [ref=e356]:
+                  - img [ref=e358]
+                - generic [ref=e360]: Settings
+```
