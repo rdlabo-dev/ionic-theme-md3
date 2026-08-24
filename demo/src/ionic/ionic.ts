@@ -1,4 +1,4 @@
-export * from '@ionic/angular';
-export { AngularDelegate } from '@ionic/angular/lazy';
+export * from '@ionic/angular/standalone';
+export { AngularDelegate } from '@ionic/angular';
 
 export const IONIC_MAJOR = 9;
