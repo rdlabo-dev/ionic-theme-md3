@@ -55,9 +55,17 @@ html.ionic-v8 {
     }
   }
 
-  ion-textarea {
+  // Ionic 9 host uses min-height: 72px; Ionic 8 outline keeps min-height: 56px
+  // on :host(.textarea-fill-outline), which beats a bare ion-textarea rule.
+  ion-textarea,
+  ion-textarea.textarea-fill-outline {
     --padding-bottom: 8px;
     min-height: 72px;
+  }
+
+  // Ionic 9 stacked/floating textareas set --padding-bottom: 6px.
+  ion-textarea:is(.textarea-label-placement-stacked, .textarea-label-placement-floating) {
+    --padding-bottom: 6px;
   }
 
   ion-alert {
