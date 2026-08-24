@@ -23,6 +23,16 @@ ion-list.md:not(.md3-disabled).list-inset {
       --show-full-highlight: 1;
     }
 
+    &:has(ion-input.input-fill-outline),
+    &:has(ion-textarea.textarea-fill-outline) {
+      --border-width: 0 !important;
+      --inner-padding-bottom: 4px;
+      ion-input,
+      ion-textarea {
+        margin: 16px 0 12px;
+      }
+    }
+
     & > ion-input[labelplacement='floating'] {
       transition: transform 200ms ease;
 

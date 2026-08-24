@@ -57,7 +57,53 @@ html.ionic-v8 {
 
   ion-textarea {
     --padding-bottom: 8px;
-    block-size: 72px;
+    min-height: 72px;
+
+    .textarea-wrapper {
+      block-size: 72px;
+      min-height: 72px;
+    }
+  }
+
+  ion-textarea:is(.textarea-label-placement-start, .textarea-label-placement-end, .textarea-label-placement-fixed) {
+    .textarea-wrapper {
+      box-sizing: border-box;
+      padding-block: 18px 8px;
+    }
+
+    .native-wrapper {
+      block-size: 46px;
+      min-height: 0;
+    }
+
+    .label-text-wrapper {
+      block-size: 18px;
+      box-sizing: border-box;
+      padding-block: 0;
+    }
+
+    .native-textarea {
+      block-size: 46px;
+      min-height: 0;
+      box-sizing: border-box;
+      padding-block: 0;
+    }
+  }
+
+  // Ionic 9 stacked/floating textareas set --padding-bottom: 6px.
+  ion-textarea:is(.textarea-label-placement-stacked, .textarea-label-placement-floating) {
+    --padding-bottom: 6px;
+    min-height: 72px;
+
+    .native-wrapper {
+      block-size: 48px;
+      min-height: 0;
+    }
+
+    .native-textarea {
+      block-size: 40px;
+      min-height: 0;
+    }
   }
 
   ion-alert {
