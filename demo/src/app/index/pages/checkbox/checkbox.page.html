@@ -39,6 +39,12 @@
       <ion-item>
         <ion-checkbox justify="space-between">Space Between Label and Control</ion-checkbox>
       </ion-item>
+      <ion-item>
+        <ion-checkbox helperText="Agree to the terms before continuing">Helper text</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox class="ion-invalid ion-touched" errorText="You must agree to the terms to continue">Error text</ion-checkbox>
+      </ion-item>
     </ion-item-group>
   </ion-list>
 
@@ -56,11 +62,5 @@
     <br />
 
     <ion-checkbox labelPlacement="stacked">Stacked Label</ion-checkbox>
-
-    <br />
-
-    <ion-checkbox helperText="Agree to the terms before continuing" errorText="You must agree to the terms to continue">
-      I agree to the terms and conditions
-    </ion-checkbox>
   </section>
 </ion-content>
