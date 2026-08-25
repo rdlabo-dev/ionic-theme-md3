@@ -2,7 +2,9 @@
 
 A CSS/JS theme library that applies Material Design 3 design system to Ionic applications.
 
+<!-- rdlabo-docs-pick -->
 ![Material Design 3 themed Ionic screens with updated components and navigation](https://raw.githubusercontent.com/rdlabo-dev/ionic-theme-md3/v2.0.0/screenshots/md3.png)
+<!-- /rdlabo-docs-pick -->
 
 DEMO is here: https://ionic-theme-md3.rdlabo.dev/
 
