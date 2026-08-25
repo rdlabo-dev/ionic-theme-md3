@@ -6,7 +6,7 @@ ion-list.md:not(.md3-disabled):not(.list-inset) {
 }
 
 ion-list.md:not(.md3-disabled).list-inset {
-  @include structured-list.layout(8px);
+  @include structured-list.layout(8px, 16px);
 
   ion-item-group > ion-item {
     --border-color: var(--ion-color-light, #fff);
@@ -44,16 +44,6 @@ ion-list.md:not(.md3-disabled).list-inset {
         transform: translateY(-4px);
       }
     }
-  }
-}
-
-ion-list.md:not(.md3-disabled).list-inset {
-  ion-item-group,
-  ion-reorder-group,
-  ion-accordion-group,
-  ion-radio-group {
-    border-radius: 16px;
-    overflow: hidden;
   }
 }
 
