@@ -12,7 +12,7 @@ ion-list.md:not(.md3-disabled) {
 ion-list.md:not(.md3-disabled).list-inset {
   @include structured-list.layout(8px, 16px);
 
-  ion-item-group > ion-item {
+  :is(#{structured-list.$groups}) ion-item {
     --border-color: var(--ion-color-light, #fff);
 
     ion-note[slot='end'] {
