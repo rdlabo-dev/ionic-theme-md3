@@ -10,7 +10,9 @@ ion-list.md:not(.md3-disabled) {
 }
 
 ion-list.md:not(.md3-disabled).list-inset {
-  @include structured-list.layout(8px, 16px);
+  $group-border-radius: 16px;
+
+  @include structured-list.layout(8px, $group-border-radius);
 
   :is(#{structured-list.$groups}) ion-item {
     --border-color: var(--ion-color-light, #fff);
@@ -48,6 +50,10 @@ ion-list.md:not(.md3-disabled).list-inset {
         transform: translateY(-4px);
       }
     }
+  }
+
+  ion-radio-group:has(> .radio-group-top) ion-item:first-of-type:not(.item-lines-inset):not(.item-lines-none) {
+    --border-radius: #{$group-border-radius} #{$group-border-radius} 0 0;
   }
 }
 
