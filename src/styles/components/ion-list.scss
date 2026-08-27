@@ -1,8 +1,12 @@
 @use '../utils/structured-list';
 
-ion-list.md:not(.md3-disabled):not(.list-inset) {
-  padding-top: 0;
-  padding-bottom: 0;
+ion-list.md:not(.md3-disabled) {
+  @include structured-list.support-text;
+
+  &:not(.list-inset) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 ion-list.md:not(.md3-disabled).list-inset {
