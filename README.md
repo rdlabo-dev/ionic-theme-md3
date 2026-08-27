@@ -133,10 +133,10 @@ createApp(App)
 
 Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-theme-ios26](https://docs.rdlabo.dev/projects/ionic-theme-ios26) when you need both platforms from one markup tree.
 
-- [Special markup](./docs/special-markup.md) — opt-in component combinations used by the demo.
-- [Using ion-item-group](./docs/using-ion-item-group.md) — shared inset-list markup for iOS 26 and MD3.
+- [Special markup](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/special-markup) — opt-in component combinations used by the demo.
+- [Using ion-item-group](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/using-ion-item-group) — shared inset-list markup for iOS 26 and MD3.
 
-- [Migration](./docs/migration.md) — changes required when updating theme markup.
+- [Migration](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/migration) — changes required when updating theme markup.
 
 <!-- rdlabo-docs-omit -->
 
