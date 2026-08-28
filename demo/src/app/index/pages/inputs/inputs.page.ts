@@ -42,6 +42,8 @@ import {
   ],
 })
 export class InputsPage implements OnInit {
+  readonly counterFormatter = (inputLength: number, maxLength: number) => `${inputLength} of ${maxLength} characters`;
+
   constructor() {}
 
   ngOnInit() {}
