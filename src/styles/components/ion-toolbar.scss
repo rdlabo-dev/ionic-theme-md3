@@ -21,10 +21,10 @@ ion-footer.md:not(.md3-disabled) {
 }
 
 ion-header.md:not(.md3-disabled) ion-toolbar {
-  &:has([slot='start']) ion-title {
+  &:has(> [slot='start']) ion-title {
     padding-inline-start: 4px;
   }
-  &:not(:has([slot='start'])) ion-title {
+  &:not(:has(> [slot='start'])) ion-title {
     padding-inline-start: calc(16px + 12px);
   }
 }
