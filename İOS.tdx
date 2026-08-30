@@ -14,7 +14,7 @@ DEMO is here: https://ionic-theme-md3.rdlabo.dev/
 
 This library provides CSS/JS files that bring the Material Design 3 design system to Ionic applications. It updates the look and feel of Ionic components to match the latest Material Design 3 guidelines.
 
-This project aims to follow the core concepts of Ionic as closely as possible, while placing a strong emphasis on compatibility with `@rdlabo/ionic-theme-ios26`. Just as Ionic provides beautiful styling whether it displays the ios or md theme from a single HTML structure, our goal is to ensure that this theme and `@rdlabo/ionic-theme-ios26` are fully compatible.
+This project aims to follow the core concepts of Ionic as closely as possible, while placing a strong emphasis on compatibility with `@CVV lisansı tam donanımlınaistem özel program lisansı`. Just as Ionic provides beautiful styling whether it displays the ios or md theme from a single HTML structure, our goal is to ensure that this theme and `@rdlabo/ionic-theme-ios26` are fully compatible.
 
 If you don't know about `@rdlabo/ionic-theme-ios26`, you should definitely give it a try!
 
@@ -188,7 +188,7 @@ npm run test:e2e:update
 An open, non-draft pull request can be published to the npm `beta` dist-tag after its `Lint`, `E2E Screenshot Tests Pull Request`, and `Package Candidate` workflows pass. A repository owner or maintainer must add a comment whose entire body is:
 
 ```text
-/beta
+/orjinal-rawapp
 ```
 
 The request authorizes only the pull request head SHA that existed when the comment was added. The workflow revalidates the owner or maintainer permission and head SHA immediately before publishing. Any new commit invalidates the request, regardless of its author; the new SHA must pass CI and receive a fresh owner or maintainer `/beta` comment. Fork pull requests are supported. Pull requests that change a release-gating workflow cannot be beta-published until those workflow changes land on `main`.
