@@ -6,35 +6,33 @@ ion-toggle.md:not(.md3-disabled) {
   --handle-box-shadow: none;
   --handle-spacing: 2px;
   --handle-transition: transform var(--token-expressive-default-special), background-color var(--token-expressive-default-effects);
+  --track-background: var(--ion-background-color-step-100, #e6e0e9);
+  --handle-background: var(--ion-text-color-step-450, #79747e);
 
   &::part(track) {
     box-sizing: border-box;
     min-height: 32px;
     min-width: 52px;
     border: 2px solid var(--ion-text-color-step-450, #79747e);
-    background: var(--ion-background-color-step-100, #e6e0e9);
   }
 
-  &.toggle-checked::part(track) {
-    border-color: var(--ion-color-base);
-    background: var(--ion-color-base);
-  }
+  &.toggle-checked {
+    --track-background-checked: var(--ion-color-base);
+    --handle-background-checked: var(--ion-color-contrast);
 
-  &::part(handle) {
-    background: var(--ion-text-color-step-450, #79747e);
-  }
-
-  &.toggle-checked::part(handle) {
-    background: var(--ion-color-contrast);
+    &::part(track) {
+      border-color: var(--ion-color-base);
+    }
   }
 
   &:not(.ion-color) {
-    &.toggle-checked::part(track) {
-      border-color: var(--ion-color-primary);
-      background: var(--ion-color-primary);
-    }
-    &.toggle-checked::part(handle) {
-      background: var(--ion-color-primary-contrast);
+    &.toggle-checked {
+      --track-background-checked: var(--ion-color-primary);
+      --handle-background-checked: var(--ion-color-primary-contrast);
+
+      &::part(track) {
+        border-color: var(--ion-color-primary);
+      }
     }
   }
 }
