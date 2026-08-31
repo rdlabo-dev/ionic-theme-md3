@@ -3,7 +3,7 @@ ion-range.md:not(.md3-disabled) {
   --bar-height: 16px;
   --bar-border-radius: 8px;
 
-  --knob-background: transparent;
+  --knob-background: var(--ion-color-primary);
   --knob-box-shadow: none;
   --knob-border-radius: 8px;
   --knob-size: 44px;
@@ -21,16 +21,14 @@ ion-range.md:not(.md3-disabled) {
       transform var(--token-expressive-fast-effects),
       outline var(--token-expressive-fast-effects);
     will-change: width;
-    height: var(--knob-size);
-    background: var(--ion-color-primary);
     transform: translateX(calc(var(--knob-size) / 2 - 2px));
     &:before {
       content: none;
     }
   }
 
-  &.ion-color::part(knob) {
-    background: var(--ion-color-base, var(--ion-color-primary));
+  &.ion-color {
+    --knob-background: var(--ion-color-base, var(--ion-color-primary));
   }
 
   &::part(tick),

@@ -109,9 +109,7 @@ ion-button.md:not(.md3-disabled) {
 
 ion-back-button.md:not(.md3-disabled) {
   --border-radius: 999px;
+  --min-height: 40px;
   --padding-start: 16px;
   --padding-end: 16px;
-  &::part(native) {
-    min-height: 40px;
-  }
 }

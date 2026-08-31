@@ -32,11 +32,12 @@ ion-header.md:not(.md3-disabled) ion-toolbar {
 ion-toolbar.md:not(.md3-disabled) {
   ion-back-button.back-button-has-icon-only {
     --icon-font-size: 24px;
-    &::part(native) {
-      width: 48px;
-      height: 48px;
-      padding: 0;
-    }
+    --min-width: 48px;
+    --min-height: 48px;
+    --padding-top: 0;
+    --padding-end: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
   }
 
   ion-button.button-has-icon-only:not(.button-small):not(.button-large) {

@@ -29,9 +29,9 @@ ion-list.md:not(.md3-disabled).list-inset {
       --show-full-highlight: 1;
     }
 
-    &:has(ion-input.input-fill-outline),
-    &:has(ion-textarea.textarea-fill-outline) {
-      --border-width: 0 !important;
+    &:has(:is(ion-input.input-fill-outline, ion-textarea.textarea-fill-outline)):not(.item-lines-inset):not(.item-lines-none),
+    &:has(:is(ion-input.input-fill-outline, ion-textarea.textarea-fill-outline)):is(.item-lines-inset, .item-lines-none) {
+      --border-width: 0;
       --inner-padding-bottom: 4px;
       ion-input,
       ion-textarea {
