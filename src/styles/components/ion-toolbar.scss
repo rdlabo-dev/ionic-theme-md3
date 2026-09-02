@@ -3,8 +3,7 @@ ion-footer.md:not(.md3-disabled) {
   box-shadow: none;
 }
 
-ion-header.md:not(.md3-disabled),
-ion-footer.md:not(.md3-disabled) {
+ion-toolbar.md:not(.md3-disabled) {
   ion-buttons[slot='start'],
   ion-back-button[slot='start'] {
     margin-left: 16px;
@@ -14,22 +13,25 @@ ion-footer.md:not(.md3-disabled) {
     margin-right: 16px;
   }
   /* fallback ion-buttons[slot=end], ion-back-button[slot=end] */
-  ion-toolbar ion-buttons > ion-back-button {
+  ion-buttons > ion-back-button {
     margin-left: 0;
     margin-right: 0;
   }
-}
 
-ion-header.md:not(.md3-disabled) ion-toolbar {
   &:has(> [slot='start']) ion-title {
     padding-inline-start: 4px;
   }
   &:not(:has(> [slot='start'])) ion-title {
     padding-inline-start: calc(16px + 12px);
   }
-}
 
-ion-toolbar.md:not(.md3-disabled) {
+  &.toolbar-searchbar:not(:has(> [slot='start'])) {
+    --padding-start: 10px;
+  }
+  &.toolbar-searchbar:not(:has(> [slot='end'])) {
+    --padding-end: 10px;
+  }
+
   ion-back-button.back-button-has-icon-only {
     --icon-font-size: 24px;
     --min-width: 48px;
