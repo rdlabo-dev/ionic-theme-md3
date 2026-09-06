@@ -10,33 +10,11 @@ A CSS/JS theme library that applies Material Design 3 design system to Ionic app
 
 DEMO is here: https://ionic-theme-md3.rdlabo.dev/
 
-## Overview
-
-This library provides CSS/JS files that bring the Material Design 3 design system to Ionic applications. It updates the look and feel of Ionic components to match the latest Material Design 3 guidelines.
-
-This project aims to follow the core concepts of Ionic as closely as possible, while placing a strong emphasis on compatibility with `@rdlabo/ionic-theme-ios26`. Just as Ionic provides beautiful styling whether it displays the ios or md theme from a single HTML structure, our goal is to ensure that this theme and `@rdlabo/ionic-theme-ios26` are fully compatible.
-
-If you don't know about `@rdlabo/ionic-theme-ios26`, you should definitely give it a try!
-
-👉️[rdlabo-dev/ionic-theme-ios26](https://github.com/rdlabo-dev/ionic-theme-ios26)
-
-### Related Projects
-
-If you need a more comprehensive Material Design 3 implementation, you may also be interested in:
-
-- **[md3-for-ionic](https://github.com/danielkleebinder/md3-for-ionic)** by danielkleebinder
-
-> **Note:** This theme is purpose-built for compatibility with Ionic's design approach and `@rdlabo/ionic-theme-ios26`; it is not intended as a strict, full MD3 recreation.
-
-## Quick start
-
-After [Installation](#installation), import the theme CSS and set `navAnimation` as shown below.
-
-In Ionic Angular apps, [check list structure with ESLint](./docs/eslint.md) as you add new screens.
+Designed for compatibility with `@rdlabo/ionic-theme-ios26`, so one markup tree can style both Ionic modes.
 
 ## Installation
 
-This is a CSS theme for extending your Ionic project. It does not work on its own, so use it together with the Ionic Framework.
+In an existing Ionic project:
 
 ```bash
 npm install @rdlabo/ionic-theme-md3
@@ -49,6 +27,49 @@ And import the theme in your project's main CSS file (e.g., `src/styles.scss`).
 ```css
 @import '@rdlabo/ionic-theme-md3/dist/css/default-variables.css';
 @import '@rdlabo/ionic-theme-md3/dist/css/ionic-theme-md3.css';
+```
+
+### Configure animations
+
+If you installed only the MD3 theme, configure its animation as follows.
+
+```ts
+import { isPlatform } from '@ionic/core'; // or @ionic/angular (Ionic 9), @ionic/angular/standalone (Ionic 8), @ionic/react, @ionic/vue
+import { mdTransitionAnimation } from '@rdlabo/ionic-theme-md3';
+
+// Angular
+provideIonicAngular({
+    ...
+    navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
+});
+
+// React
+setupIonicReact({
+    ...
+    navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
+});
+
+// Vue
+createApp(App)
+    .use(IonicVue, {
+        ...
+        navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
+})
+```
+
+### Check the theme
+
+Test on Android. When previewing on desktop, set Ionic mode to `md` in your existing framework initialization config (for example `mode: 'md'`).
+
+Use this markup to preview the inset grouped list look. For the list structure the theme expects, see [Using ion-item-group](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/using-ion-item-group).
+
+```html
+<ion-list mode="md" inset="true">
+  <ion-item-group>
+    <ion-item><ion-label>Notifications</ion-label></ion-item>
+    <ion-item><ion-label>Appearance</ion-label></ion-item>
+  </ion-item-group>
+</ion-list>
 ```
 
 ### Optional: use the MD3 and iOS 26 themes together
@@ -107,40 +128,20 @@ createApp(App)
     });
 ```
 
-If you installed only the MD3 theme, configure its animation as follows.
-
-```ts
-import { isPlatform } from '@ionic/core'; // or @ionic/angular (Ionic 9), @ionic/angular/standalone (Ionic 8), @ionic/react, @ionic/vue
-import { mdTransitionAnimation } from '@rdlabo/ionic-theme-md3';
-
-// Angular
-provideIonicAngular({
-    ...
-    navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
-});
-
-// React
-setupIonicReact({
-    ...
-    navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
-});
-
-// Vue
-createApp(App)
-    .use(IonicVue, {
-        ...
-        navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
-})
-```
-
 ## Documentation
 
-Start with [Installation](#installation). Pair this theme with [@rdlabo/ionic-theme-ios26](https://docs.rdlabo.dev/projects/ionic-theme-ios26) when you need both platforms from one markup tree.
-
-- [Special markup](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/special-markup) — opt-in component combinations used by the demo.
 - [Using ion-item-group](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/using-ion-item-group) — shared inset-list markup for iOS 26 and MD3.
-
+- [Special markup](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/special-markup) — opt-in component combinations used by the demo.
+- [ESLint](./docs/eslint.md) — check list structure with ESLint rules.
 - [Migration](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/migration) — changes required when updating theme markup.
+
+## Related Projects
+
+If you need a more comprehensive Material Design 3 implementation, you may also be interested in:
+
+- **[md3-for-ionic](https://github.com/danielkleebinder/md3-for-ionic)** by danielkleebinder
+
+> **Note:** This theme is purpose-built for compatibility with Ionic's design approach and `@rdlabo/ionic-theme-ios26`; it is not intended as a strict, full MD3 recreation.
 
 <!-- rdlabo-docs-omit -->
 
