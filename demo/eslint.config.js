@@ -3,6 +3,10 @@ const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
 const rdlabo = require('@rdlabo/eslint-plugin-rules');
+// The Ionic 8 matrix uses plugin v21; Ionic 9 uses its renamed v22 rule.
+const ionicStandaloneRule = 'prefer-ionic-standalone' in rdlabo.rules
+  ? '@rdlabo/rules/prefer-ionic-standalone'
+  : '@rdlabo/rules/deny-import-from-ionic-module';
 
 module.exports = tseslint.config(
   {
@@ -29,7 +33,7 @@ module.exports = tseslint.config(
       "@angular-eslint/directive-selector": "off",
       "@angular-eslint/component-selector": "off",
       "@angular-eslint/no-empty-lifecycle-method": "off",
-      '@rdlabo/rules/deny-import-from-ionic-module': 'error',
+      [ionicStandaloneRule]: 'error',
       '@rdlabo/rules/implements-ionic-lifecycle': 'error',
       '@rdlabo/rules/deny-soft-private-modifier': 'error',
       '@rdlabo/rules/signal-use-as-signal': 'error',
@@ -47,6 +51,13 @@ module.exports = tseslint.config(
     ],
     rules: {
       '@rdlabo/rules/ionic-attr-type-check': 'error',
+    },
+  },
+  {
+    // These replacement entry points deliberately bridge Ionic 8 and 9 imports.
+    files: ["src/ionic/ionic.ts", "src/ionic/ionic.v8.ts"],
+    rules: {
+      [ionicStandaloneRule]: "off",
     },
   }
 );
