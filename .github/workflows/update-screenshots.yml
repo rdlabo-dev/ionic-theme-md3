@@ -106,7 +106,7 @@ jobs:
         run: npm run build
 
       - name: Install Ionic 8 in demo
-        run: npm install --no-save --package-lock=false @ionic/angular@8.8.19 @ionic/core@8.8.19
+        run: npm install --no-save --package-lock=false @ionic/angular@8.8.19 @ionic/core@8.8.19 @rdlabo/eslint-plugin-rules@21.3.0
         working-directory: './demo'
 
       - name: Verify Ionic 8 against the same screenshots

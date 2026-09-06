@@ -38,7 +38,7 @@ jobs:
       - run: npm ci
         working-directory: './demo'
       - if: matrix.ionic-major == 8
-        run: npm install --no-save --package-lock=false @ionic/angular@${{ matrix.ionic-version }} @ionic/core@${{ matrix.ionic-version }}
+        run: npm install --no-save --package-lock=false @ionic/angular@${{ matrix.ionic-version }} @ionic/core@${{ matrix.ionic-version }} @rdlabo/eslint-plugin-rules@21.3.0
         working-directory: './demo'
 
       - name: Run Playwright tests
