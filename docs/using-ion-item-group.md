@@ -20,7 +20,7 @@ The examples use framework-neutral Web Component markup. In React or Vue, use th
 
 No wrapper is required for lists that do not use `inset="true"`.
 
-[Check list structure with ESLint](./eslint.md).
+[Check list structure with ESLint](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/eslint).
 
 ## Why the wrapper is required
 
@@ -32,4 +32,4 @@ The theme therefore:
 - applies the item surface to `ion-item-group`; and
 - leaves `ion-list-header` outside that surface.
 
-For two-line items and section-header groups, see [Special markup](./special-markup.md).
+For two-line items and section-header groups, see [Special markup](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/special-markup).

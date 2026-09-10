@@ -132,7 +132,7 @@ createApp(App)
 
 - [Using ion-item-group](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/using-ion-item-group) — shared inset-list markup for iOS 26 and MD3.
 - [Special markup](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/special-markup) — opt-in component combinations used by the demo.
-- [ESLint](./docs/eslint.md) — check list structure with ESLint rules.
+- [ESLint](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/eslint) — check list structure with ESLint rules.
 - [Migration](https://docs.rdlabo.dev/projects/ionic-theme-md3/docs/migration) — changes required when updating theme markup.
 
 ## Related Projects
