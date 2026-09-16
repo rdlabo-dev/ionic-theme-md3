@@ -1,20 +1,241 @@
 /**
- * @naming
- * prefix:                 ios26
- * target-element:         tab-button
- * target css property:    color
- * status:                 selected
- * additional information: rgb
+ * @license MIT
+ *
+ * Material Design 3 system tokens derived from the host Ionic palette.
+ *
+ * These tokens are exposed as CSS custom properties so the theme and consumers
+ * can reference them. The architecture has three layers:
+ *
+ * 1. Source colors (--md-sys-source-*)
+ *    The "seed" colors Material Color Utilities would use to generate a tonal
+ *    palette. They map to Ionic variables by default and are fully overridable
+ *    for Material You / dynamic color.
+ *
+ * 2. MD3 color roles (--md-sys-color-*)
+ *    The public API components consume. When no override is provided, the
+ *    source colors are transformed through a CSS-only fallback generator
+ *    (color-mix). This is intentionally an adapter, not the canonical M3
+ *    HCT algorithm.
+ *
+ * 3. Components
+ *    Reference only --md-sys-color-* and never --ion-color-* directly.
+ *
+ * This boundary lets the theme keep working with plain Ionic palettes today
+ * while allowing a future color-scheme generator to replace layer 2 without
+ * touching component styles.
  */
 
 :root {
-  --token-elevation-0: rgba(0, 0, 0, 0.2) 0px 0px 0px 0px, rgba(0, 0, 0, 0.14) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 0px 0px 0px;
-  --token-elevation-1: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
-  --token-elevation-3: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
-  --token-elevation-6: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
-  --token-elevation-8: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
-  --token-elevation-12: rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px;
+  // ---------------------------------------------------------------------------
+  // Source colors
+  // ---------------------------------------------------------------------------
 
+  --md-sys-source-primary: var(--ion-color-primary, #6750a4);
+  --md-sys-source-secondary: var(--ion-color-secondary, #625b71);
+  --md-sys-source-tertiary: var(--ion-color-tertiary, #7d5260);
+  --md-sys-source-error: var(--ion-color-danger, #b3261e);
+
+  // Neutral sources: a desaturated version of the primary hue plus the app's
+  // neutral gray. Overriding --md-sys-source-neutral / -variant is the easiest
+  // way to feed a custom Material You neutral palette.
+  --md-sys-source-neutral: color-mix(in srgb, var(--md-sys-source-primary) 15%, var(--ion-color-medium, #79747e));
+  --md-sys-source-neutral-variant: color-mix(in srgb, var(--md-sys-source-primary) 25%, var(--ion-color-medium, #79747e));
+
+  --md-sys-source-background: var(--ion-background-color, #ffffff);
+  --md-sys-source-text: var(--ion-text-color, #000000);
+
+  // ---------------------------------------------------------------------------
+  // Color roles
+  // ---------------------------------------------------------------------------
+
+  // Primary
+  --md-sys-color-primary: var(--md-sys-source-primary);
+  --md-sys-color-on-primary: var(--ion-color-primary-contrast, #ffffff);
+  --md-sys-color-primary-container: color-mix(in srgb, var(--md-sys-source-primary) 18%, var(--md-sys-source-background));
+  --md-sys-color-on-primary-container: color-mix(in srgb, var(--md-sys-source-primary) 20%, var(--md-sys-source-text));
+
+  // Secondary
+  --md-sys-color-secondary: var(--md-sys-source-secondary);
+  --md-sys-color-on-secondary: var(--ion-color-secondary-contrast, #ffffff);
+  --md-sys-color-secondary-container: color-mix(in srgb, var(--md-sys-source-secondary) 18%, var(--md-sys-source-background));
+  --md-sys-color-on-secondary-container: color-mix(in srgb, var(--md-sys-source-secondary) 20%, var(--md-sys-source-text));
+
+  // Tertiary
+  --md-sys-color-tertiary: var(--md-sys-source-tertiary);
+  --md-sys-color-on-tertiary: var(--ion-color-tertiary-contrast, #ffffff);
+  --md-sys-color-tertiary-container: color-mix(in srgb, var(--md-sys-source-tertiary) 18%, var(--md-sys-source-background));
+  --md-sys-color-on-tertiary-container: color-mix(in srgb, var(--md-sys-source-tertiary) 20%, var(--md-sys-source-text));
+
+  // Error
+  --md-sys-color-error: var(--md-sys-source-error);
+  --md-sys-color-on-error: var(--ion-color-danger-contrast, #ffffff);
+  --md-sys-color-error-container: color-mix(in srgb, var(--md-sys-source-error) 18%, var(--md-sys-source-background));
+  --md-sys-color-on-error-container: color-mix(in srgb, var(--md-sys-source-error) 20%, var(--md-sys-source-text));
+
+  // Surfaces
+  --md-sys-color-background: var(--md-sys-source-background);
+  --md-sys-color-surface: var(--md-sys-source-background);
+  --md-sys-color-surface-tint: var(--md-sys-source-primary);
+  --md-sys-color-surface-dim: color-mix(in srgb, var(--md-sys-source-neutral) 10%, var(--md-sys-source-background));
+  --md-sys-color-surface-bright: color-mix(in srgb, var(--md-sys-source-neutral) 2%, var(--md-sys-source-background));
+  --md-sys-color-surface-variant: color-mix(in srgb, var(--md-sys-source-neutral) 10%, var(--md-sys-source-background));
+  --md-sys-color-surface-container-lowest: var(--md-sys-source-background);
+  --md-sys-color-surface-container-low: color-mix(in srgb, var(--md-sys-source-neutral) 2%, var(--md-sys-source-background));
+  --md-sys-color-surface-container: color-mix(in srgb, var(--md-sys-source-neutral) 4%, var(--md-sys-source-background));
+  --md-sys-color-surface-container-high: color-mix(in srgb, var(--md-sys-source-neutral) 6%, var(--md-sys-source-background));
+  --md-sys-color-surface-container-highest: color-mix(in srgb, var(--md-sys-source-neutral) 8%, var(--md-sys-source-background));
+
+  // Content colors
+  --md-sys-color-on-surface: var(--md-sys-source-text);
+  --md-sys-color-on-surface-variant: color-mix(in srgb, var(--md-sys-source-neutral-variant) 60%, var(--md-sys-source-text));
+  --md-sys-color-outline: color-mix(in srgb, var(--md-sys-source-neutral-variant) 50%, var(--md-sys-source-text));
+  --md-sys-color-outline-variant: color-mix(in srgb, var(--md-sys-source-neutral) 40%, var(--md-sys-source-background));
+
+  // Inverse
+  --md-sys-color-inverse-surface: var(--ion-color-dark, #322f35);
+  --md-sys-color-inverse-on-surface: var(--ion-color-dark-contrast, #f5eff7);
+  --md-sys-color-inverse-primary: var(--ion-color-primary-tint, #d0bcff);
+
+  // Misc
+  --md-sys-color-scrim: rgba(0, 0, 0, 0.32);
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.2);
+
+  // ---------------------------------------------------------------------------
+  // Shape
+  // ---------------------------------------------------------------------------
+
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 999px;
+
+  // ---------------------------------------------------------------------------
+  // Typography
+  // ---------------------------------------------------------------------------
+
+  // M3's default typeface is Roboto, but we inherit the app's font family.
+  --md-sys-typescale-font: var(
+    --ion-font-family,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif
+  );
+
+  --md-sys-typescale-display-large-size: 3.5625rem;
+  --md-sys-typescale-display-large-line-height: 4rem;
+  --md-sys-typescale-display-large-weight: 400;
+  --md-sys-typescale-display-large-tracking: -0.015625rem;
+
+  --md-sys-typescale-display-medium-size: 2.8125rem;
+  --md-sys-typescale-display-medium-line-height: 3.25rem;
+  --md-sys-typescale-display-medium-weight: 400;
+  --md-sys-typescale-display-medium-tracking: 0;
+
+  --md-sys-typescale-display-small-size: 2.25rem;
+  --md-sys-typescale-display-small-line-height: 2.75rem;
+  --md-sys-typescale-display-small-weight: 400;
+  --md-sys-typescale-display-small-tracking: 0;
+
+  --md-sys-typescale-headline-large-size: 2rem;
+  --md-sys-typescale-headline-large-line-height: 2.5rem;
+  --md-sys-typescale-headline-large-weight: 400;
+  --md-sys-typescale-headline-large-tracking: 0;
+
+  --md-sys-typescale-headline-medium-size: 1.75rem;
+  --md-sys-typescale-headline-medium-line-height: 2.25rem;
+  --md-sys-typescale-headline-medium-weight: 400;
+  --md-sys-typescale-headline-medium-tracking: 0;
+
+  --md-sys-typescale-headline-small-size: 1.5rem;
+  --md-sys-typescale-headline-small-line-height: 2rem;
+  --md-sys-typescale-headline-small-weight: 400;
+  --md-sys-typescale-headline-small-tracking: 0;
+
+  --md-sys-typescale-title-large-size: 1.375rem;
+  --md-sys-typescale-title-large-line-height: 1.75rem;
+  --md-sys-typescale-title-large-weight: 400;
+  --md-sys-typescale-title-large-tracking: 0;
+
+  --md-sys-typescale-title-medium-size: 1rem;
+  --md-sys-typescale-title-medium-line-height: 1.5rem;
+  --md-sys-typescale-title-medium-weight: 500;
+  --md-sys-typescale-title-medium-tracking: 0.009375rem;
+
+  --md-sys-typescale-title-small-size: 0.875rem;
+  --md-sys-typescale-title-small-line-height: 1.25rem;
+  --md-sys-typescale-title-small-weight: 500;
+  --md-sys-typescale-title-small-tracking: 0.00625rem;
+
+  --md-sys-typescale-body-large-size: 1rem;
+  --md-sys-typescale-body-large-line-height: 1.5rem;
+  --md-sys-typescale-body-large-weight: 400;
+  --md-sys-typescale-body-large-tracking: 0.03125rem;
+
+  --md-sys-typescale-body-medium-size: 0.875rem;
+  --md-sys-typescale-body-medium-line-height: 1.25rem;
+  --md-sys-typescale-body-medium-weight: 400;
+  --md-sys-typescale-body-medium-tracking: 0.015625rem;
+
+  --md-sys-typescale-body-small-size: 0.75rem;
+  --md-sys-typescale-body-small-line-height: 1rem;
+  --md-sys-typescale-body-small-weight: 400;
+  --md-sys-typescale-body-small-tracking: 0.025rem;
+
+  --md-sys-typescale-label-large-size: 0.875rem;
+  --md-sys-typescale-label-large-line-height: 1.25rem;
+  --md-sys-typescale-label-large-weight: 500;
+  --md-sys-typescale-label-large-tracking: 0.00625rem;
+
+  --md-sys-typescale-label-medium-size: 0.75rem;
+  --md-sys-typescale-label-medium-line-height: 1rem;
+  --md-sys-typescale-label-medium-weight: 500;
+  --md-sys-typescale-label-medium-tracking: 0.03125rem;
+
+  --md-sys-typescale-label-small-size: 0.6875rem;
+  --md-sys-typescale-label-small-line-height: 1rem;
+  --md-sys-typescale-label-small-weight: 500;
+  --md-sys-typescale-label-small-tracking: 0.03125rem;
+
+  // ---------------------------------------------------------------------------
+  // Motion
+  // ---------------------------------------------------------------------------
+
+  // M3 easing curves
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --md-sys-motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+
+  // M3 duration tokens
+  --md-sys-motion-duration-short-1: 50ms;
+  --md-sys-motion-duration-short-2: 100ms;
+  --md-sys-motion-duration-short-3: 150ms;
+  --md-sys-motion-duration-short-4: 200ms;
+  --md-sys-motion-duration-medium-1: 250ms;
+  --md-sys-motion-duration-medium-2: 300ms;
+  --md-sys-motion-duration-medium-3: 350ms;
+  --md-sys-motion-duration-medium-4: 400ms;
+  --md-sys-motion-duration-long-1: 450ms;
+  --md-sys-motion-duration-long-2: 500ms;
+  --md-sys-motion-duration-long-3: 550ms;
+  --md-sys-motion-duration-long-4: 600ms;
+  --md-sys-motion-duration-extra-long-1: 700ms;
+  --md-sys-motion-duration-extra-long-2: 800ms;
+  --md-sys-motion-duration-extra-long-3: 900ms;
+  --md-sys-motion-duration-extra-long-4: 1000ms;
+
+  // Legacy expressive motion tokens (kept for backwards compatibility)
   --token-expressive-fast-special: 350ms cubic-bezier(0.42, 1.67, 0.21, 0.9);
   --token-expressive-default-special: 500ms cubic-bezier(0.38, 1.21, 0.22, 1);
   --token-expressive-slow-special: 650ms cubic-bezier(0.39, 1.29, 0.35, 0.98);
@@ -22,4 +243,66 @@
   --token-expressive-fast-effects: 150ms cubic-bezier(0.31, 0.94, 0.34, 1);
   --token-expressive-default-effects: 200ms cubic-bezier(0.34, 0.8, 0.34, 1);
   --token-expressive-slow-effects: 300ms cubic-bezier(0.34, 0.88, 0.34, 1);
+
+  // ---------------------------------------------------------------------------
+  // State
+  // ---------------------------------------------------------------------------
+
+  --md-sys-state-hover-state-layer-opacity: 0.08;
+  --md-sys-state-focus-state-layer-opacity: 0.12;
+  --md-sys-state-pressed-state-layer-opacity: 0.12;
+  --md-sys-state-drag-state-layer-opacity: 0.16;
+  --md-sys-state-disabled-container-opacity: 0.12;
+  --md-sys-state-disabled-content-opacity: 0.38;
+
+  // ---------------------------------------------------------------------------
+  // Elevation
+  // ---------------------------------------------------------------------------
+
+  --md-sys-elevation-level-0: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+  --md-sys-elevation-level-1: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  --md-sys-elevation-level-2: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  --md-sys-elevation-level-3: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+  --md-sys-elevation-level-4:
+    rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  --md-sys-elevation-level-5:
+    rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
+
+  // Legacy token aliases (kept for backwards compatibility)
+  --token-elevation-0: var(--md-sys-elevation-level-0);
+  --token-elevation-1: var(--md-sys-elevation-level-1);
+  --token-elevation-3: var(--md-sys-elevation-level-3);
+  --token-elevation-6: var(--md-sys-elevation-level-4);
+  --token-elevation-8: var(--md-sys-elevation-level-5);
+  --token-elevation-12: var(--md-sys-elevation-level-5);
+}
+
+// ---------------------------------------------------------------------------
+// Dark palette overrides
+// ---------------------------------------------------------------------------
+// When Ionic applies its dark palette, the background/text foundation
+// switches to dark mode. These overrides adapt the derived Material roles
+// for dark surfaces while preserving Ionic colors as the theme source.
+
+html.ion-palette-dark {
+  // Container tones: use more source against a black background.
+  --md-sys-color-primary-container: color-mix(in srgb, var(--md-sys-source-primary) 35%, var(--md-sys-source-background));
+  --md-sys-color-secondary-container: color-mix(in srgb, var(--md-sys-source-secondary) 35%, var(--md-sys-source-background));
+  --md-sys-color-tertiary-container: color-mix(in srgb, var(--md-sys-source-tertiary) 35%, var(--md-sys-source-background));
+  --md-sys-color-error-container: color-mix(in srgb, var(--md-sys-source-error) 35%, var(--md-sys-source-background));
+
+  // Surfaces: bring surface containers up to M3 dark tone range.
+  --md-sys-color-surface-dim: color-mix(in srgb, var(--md-sys-source-neutral) 10%, var(--md-sys-source-background));
+  --md-sys-color-surface-bright: color-mix(in srgb, var(--md-sys-source-neutral) 24%, var(--md-sys-source-background));
+  --md-sys-color-surface-variant: color-mix(in srgb, var(--md-sys-source-neutral) 10%, var(--md-sys-source-background));
+  --md-sys-color-surface-container-lowest: var(--md-sys-source-background);
+  --md-sys-color-surface-container-low: color-mix(in srgb, var(--md-sys-source-neutral) 8%, var(--md-sys-source-background));
+  --md-sys-color-surface-container: color-mix(in srgb, var(--md-sys-source-neutral) 12%, var(--md-sys-source-background));
+  --md-sys-color-surface-container-high: color-mix(in srgb, var(--md-sys-source-neutral) 16%, var(--md-sys-source-background));
+  --md-sys-color-surface-container-highest: color-mix(in srgb, var(--md-sys-source-neutral) 20%, var(--md-sys-source-background));
+
+  // Inverse flips from dark to light in a dark palette.
+  --md-sys-color-inverse-surface: var(--ion-color-dark, #e6e0e9);
+  --md-sys-color-inverse-on-surface: var(--ion-color-dark-contrast, #1d1b20);
+  --md-sys-color-inverse-primary: var(--ion-color-primary-tint, #d0bcff);
 }
