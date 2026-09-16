@@ -1,56 +1,75 @@
 @mixin theme-button() {
-  // Default is be round button
-  --box-shadow: none;
+  // Typography uses M3 label-large / sentence case.
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  text-transform: none;
+
+  // Default shape is the M3 fully-rounded "pill".
+  --border-radius: var(--md-sys-shape-corner-full);
   --padding-start: 16px;
   --padding-end: 16px;
-  --border-radius: 999px;
+  --box-shadow: none;
 
-  &:not(.button-round) {
-    /**
-     * for remove default style:
-     * .sc-ion-buttons-md-s ion-button:not(.button-round) {
-     *   --border-radius: 2px;
-     * }
-     */
-    --border-radius: 999px;
-  }
+  // Default fill is "solid" in Ionic, which maps to M3 "filled".
+  --background: var(--md-sys-color-primary);
+  --color: var(--md-sys-color-on-primary);
+  --background-hover: var(--md-sys-color-on-primary);
+  --background-hover-opacity: var(--md-sys-state-hover-state-layer-opacity);
+  --background-focused: var(--md-sys-color-on-primary);
+  --background-focused-opacity: var(--md-sys-state-focus-state-layer-opacity);
+  --background-activated: var(--md-sys-color-on-primary);
+  --background-activated-opacity: var(--md-sys-state-pressed-state-layer-opacity);
 
   &::part(native) {
     height: 40px;
   }
 
   ion-icon {
-    font-size: 24px;
+    font-size: 20px;
+
     &[slot='start'] {
       margin-inline-start: 0;
       margin-inline-end: 8px;
     }
+
     &[slot='end'] {
       margin-inline-start: 8px;
       margin-inline-end: 0;
     }
   }
 
+  // Small size (32dp)
   &.button-small {
     --padding-start: 12px;
     --padding-end: 12px;
+
+    font-size: var(--md-sys-typescale-label-medium-size);
+    font-weight: var(--md-sys-typescale-label-medium-weight);
+    letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+
     &::part(native) {
       height: 32px;
     }
+
     &.button-has-icon-only {
       width: 32px;
       height: 32px;
     }
+
     &.button-has-icon-only::part(native) {
       width: 32px;
       height: 32px;
     }
+
     ion-icon {
-      font-size: 20px;
+      font-size: 18px;
+
       &[slot='start'] {
         margin-inline-start: 0;
         margin-inline-end: 4px;
       }
+
       &[slot='end'] {
         margin-inline-start: 4px;
         margin-inline-end: 0;
@@ -58,6 +77,7 @@
     }
   }
 
+  // Large size (56dp)
   &.button-large {
     --padding-start: 24px;
     --padding-end: 24px;
@@ -65,20 +85,25 @@
     &::part(native) {
       height: 56px;
     }
+
     &.button-has-icon-only {
       width: 56px;
       height: 56px;
     }
+
     &.button-has-icon-only::part(native) {
       width: 56px;
       height: 56px;
     }
+
     ion-icon {
       font-size: 24px;
+
       &[slot='start'] {
         margin-inline-start: 0;
         margin-inline-end: 8px;
       }
+
       &[slot='end'] {
         margin-inline-start: 8px;
         margin-inline-end: 0;
@@ -86,20 +111,62 @@
     }
   }
 
+  // MD3 "elevated" variant. Surface container with primary label and a
+  // subtle shadow; the state layer uses the primary color.
+  &.button-elevated {
+    --background: var(--md-sys-color-surface-container-low);
+    --color: var(--md-sys-color-primary);
+    --box-shadow: var(--md-sys-elevation-level-1);
+    --background-hover: var(--md-sys-color-primary);
+    --background-focused: var(--md-sys-color-primary);
+    --background-activated: var(--md-sys-color-primary);
+  }
+
+  // MD3 "tonal" variant. Secondary container with on-secondary text.
+  &.button-tonal {
+    --background: var(--md-sys-color-secondary-container);
+    --color: var(--md-sys-color-on-secondary-container);
+    --background-hover: var(--md-sys-color-on-secondary-container);
+    --background-focused: var(--md-sys-color-on-secondary-container);
+    --background-activated: var(--md-sys-color-on-secondary-container);
+  }
+
+  // Ionic "outline" maps to M3 "outlined".
+  &.button-outline {
+    --background: transparent;
+    --color: var(--md-sys-color-primary);
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: var(--md-sys-color-outline);
+    --background-hover: var(--md-sys-color-primary);
+    --background-focused: var(--md-sys-color-primary);
+    --background-activated: var(--md-sys-color-primary);
+  }
+
+  // Ionic "clear" maps to M3 "text".
+  &.button-clear {
+    --background: transparent;
+    --color: var(--md-sys-color-primary);
+    --border-width: 0;
+    --background-hover: var(--md-sys-color-primary);
+    --background-focused: var(--md-sys-color-primary);
+    --background-activated: var(--md-sys-color-primary);
+  }
+
+  // Icon-only buttons. The visible container is 40x40 with a 24dp icon.
   &.button-has-icon-only {
     &::part(native) {
       width: 40px;
       height: 40px;
     }
+
     --padding-start: 0;
     --padding-end: 0;
   }
 
+  // Square shape option. M3 square buttons use small corner radius.
   &.button-square {
-    --border-radius: 8px;
-    &.button-square {
-      --border-radius: 12px;
-    }
+    --border-radius: var(--md-sys-shape-corner-small);
   }
 }
 
@@ -108,7 +175,7 @@ ion-button.md:not(.md3-disabled) {
 }
 
 ion-back-button.md:not(.md3-disabled) {
-  --border-radius: 999px;
+  --border-radius: var(--md-sys-shape-corner-full);
   --min-height: 40px;
   --padding-start: 16px;
   --padding-end: 16px;

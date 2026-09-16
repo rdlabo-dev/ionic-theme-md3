@@ -4,14 +4,23 @@ ion-footer.md:not(.md3-disabled) {
 }
 
 ion-toolbar.md:not(.md3-disabled) {
+  // Surface background / on-surface text, with no bottom border.
+  --background: var(--md-sys-color-surface);
+  --color: var(--md-sys-color-on-surface);
+  --border-width: 0;
+  --border-color: transparent;
+  --min-height: 56px;
+
   ion-buttons[slot='start'],
   ion-back-button[slot='start'] {
     margin-inline-start: 16px;
   }
+
   ion-buttons[slot='end'],
   ion-back-button[slot='end'] {
     margin-inline-end: 16px;
   }
+
   /* fallback ion-buttons[slot=end], ion-back-button[slot=end] */
   ion-buttons > ion-back-button {
     margin-inline: 0;
@@ -20,6 +29,7 @@ ion-toolbar.md:not(.md3-disabled) {
   &:has(> [slot='start']) ion-title {
     padding-inline-start: 4px;
   }
+
   &:not(:has(> [slot='start'])) ion-title {
     padding-inline-start: calc(16px + 12px);
   }
@@ -27,6 +37,7 @@ ion-toolbar.md:not(.md3-disabled) {
   &.toolbar-searchbar:not(:has(> [slot='start'])) {
     --padding-start: 10px;
   }
+
   &.toolbar-searchbar:not(:has(> [slot='end'])) {
     --padding-end: 10px;
   }
@@ -46,11 +57,48 @@ ion-toolbar.md:not(.md3-disabled) {
       width: 48px;
       height: 48px;
     }
+
     &.button-solid {
       &::part(native) {
         width: 40px;
         height: 40px;
       }
+    }
+  }
+
+  // MD3 top app bar variants.
+  // These are opt-in classes so the default 56px Ionic height stays intact.
+  &.toolbar-small {
+    --min-height: 64px;
+
+    ion-title {
+      font-size: var(--md-sys-typescale-title-large-size);
+      font-weight: var(--md-sys-typescale-title-large-weight);
+      letter-spacing: var(--md-sys-typescale-title-large-tracking);
+    }
+  }
+
+  &.toolbar-medium {
+    --min-height: 112px;
+    --padding-bottom: 24px;
+
+    ion-title {
+      align-self: end;
+      font-size: var(--md-sys-typescale-headline-small-size);
+      font-weight: var(--md-sys-typescale-headline-small-weight);
+      letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+    }
+  }
+
+  &.toolbar-large {
+    --min-height: 152px;
+    --padding-bottom: 24px;
+
+    ion-title {
+      align-self: end;
+      font-size: var(--md-sys-typescale-headline-medium-size);
+      font-weight: var(--md-sys-typescale-headline-medium-weight);
+      letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
     }
   }
 }
