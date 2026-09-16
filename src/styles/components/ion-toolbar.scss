@@ -6,16 +6,15 @@ ion-footer.md:not(.md3-disabled) {
 ion-toolbar.md:not(.md3-disabled) {
   ion-buttons[slot='start'],
   ion-back-button[slot='start'] {
-    margin-left: 16px;
+    margin-inline-start: 16px;
   }
   ion-buttons[slot='end'],
   ion-back-button[slot='end'] {
-    margin-right: 16px;
+    margin-inline-end: 16px;
   }
   /* fallback ion-buttons[slot=end], ion-back-button[slot=end] */
   ion-buttons > ion-back-button {
-    margin-left: 0;
-    margin-right: 0;
+    margin-inline: 0;
   }
 
   &:has(> [slot='start']) ion-title {
