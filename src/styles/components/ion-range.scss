@@ -1,13 +1,13 @@
 ion-range.md:not(.md3-disabled) {
   --height: 56px;
   --bar-height: 16px;
-  --bar-border-radius: var(--md-sys-shape-corner-small);
+  --bar-border-radius: 8px;
   --bar-background: var(--md-sys-color-surface-container-highest);
   --bar-background-active: var(--md-sys-color-primary);
 
   --knob-background: var(--md-sys-color-on-primary);
   --knob-box-shadow: none;
-  --knob-border-radius: var(--md-sys-shape-corner-small);
+  --knob-border-radius: 8px;
   --knob-size: 44px;
 
   --pin-background: var(--md-sys-color-inverse-surface);
@@ -38,7 +38,7 @@ ion-range.md:not(.md3-disabled) {
 
   &.ion-color {
     --bar-background-active: var(--ion-color-base, var(--ion-color-primary));
-    --knob-background: var(--ion-color-contrast, var(--ion-color-primary-contrast));
+    --knob-background: var(--ion-color-base, var(--ion-color-primary));
     --pin-background: var(--ion-color-base, var(--ion-color-primary));
     --pin-color: var(--ion-color-contrast, var(--ion-color-primary-contrast));
   }

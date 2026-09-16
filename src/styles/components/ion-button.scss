@@ -117,26 +117,6 @@
     }
   }
 
-  // MD3 "elevated" variant. Surface container with primary label and a
-  // subtle shadow; the state layer uses the primary color.
-  &.button-elevated {
-    --background: var(--md-sys-color-surface-container-low);
-    --color: var(--md-sys-color-primary);
-    --box-shadow: var(--md-sys-elevation-level-1);
-    --background-hover: var(--md-sys-color-primary);
-    --background-focused: var(--md-sys-color-primary);
-    --background-activated: var(--md-sys-color-primary);
-  }
-
-  // MD3 "tonal" variant. Secondary container with on-secondary text.
-  &.button-tonal {
-    --background: var(--md-sys-color-secondary-container);
-    --color: var(--md-sys-color-on-secondary-container);
-    --background-hover: var(--md-sys-color-on-secondary-container);
-    --background-focused: var(--md-sys-color-on-secondary-container);
-    --background-activated: var(--md-sys-color-on-secondary-container);
-  }
-
   // Ionic "outline" maps to M3 "outlined".
   &.button-outline {
     --background: transparent;

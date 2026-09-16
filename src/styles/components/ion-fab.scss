@@ -1,10 +1,9 @@
 ion-fab.md:not(.md3-disabled) {
   ion-fab-button {
-    // M3 FAB uses primary-container with on-primary-container content.
     --background: var(--md-sys-color-primary-container);
     --color: var(--md-sys-color-on-primary-container);
-    --border-radius: var(--md-sys-shape-corner-large);
-    --box-shadow: var(--md-sys-elevation-level-3);
+    --border-radius: 16px;
+    --box-shadow: var(--token-elevation-3);
     --transition: border-radius var(--md-sys-motion-duration-medium-3) var(--md-sys-motion-easing-emphasized-decelerate);
 
     // State layers use the on-container color.
@@ -34,7 +33,7 @@ ion-fab.md:not(.md3-disabled) {
     &.fab-button-small {
       width: 40px;
       height: 40px;
-      --border-radius: var(--md-sys-shape-corner-medium);
+      --border-radius: 12px;
 
       &.fab-button-close-active {
         --border-radius: 50%;

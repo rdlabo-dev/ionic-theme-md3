@@ -1,16 +1,11 @@
 ion-tab-bar.md:not(.md3-disabled) {
-  // M3 bottom navigation bar sits on a slightly elevated surface.
   --background: var(--md-sys-color-surface-container);
-  --border: none;
-  height: 80px;
+  height: 62px;
 
   ion-tab-button {
-    --background: transparent;
-    --background-focused: var(--md-sys-color-on-surface);
-    --background-focused-opacity: var(--md-sys-state-focus-state-layer-opacity);
+    --ripple-color: transparent;
     --color: var(--md-sys-color-on-surface-variant);
     --color-selected: var(--md-sys-color-on-surface);
-    --ripple-color: var(--md-sys-color-on-surface);
 
     ion-icon {
       padding: 4px 16px;

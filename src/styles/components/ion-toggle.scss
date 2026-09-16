@@ -1,10 +1,10 @@
 ion-toggle.md:not(.md3-disabled) {
   --handle-width: 24px;
   --handle-height: 24px;
-  --handle-border-radius: 50%;
+  --handle-border-radius: 16px;
   --border-radius: 16px;
   --handle-box-shadow: none;
-  --handle-spacing: 4px;
+  --handle-spacing: 2px;
   --handle-transition:
     transform var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
     background-color var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);

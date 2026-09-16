@@ -1,34 +1,3 @@
 ion-segment.md:not(.md3-disabled) {
-  // M3 "outlined" segmented button group.
-  --background: var(--md-sys-color-surface);
-  border: 1px solid var(--md-sys-color-outline);
-  border-radius: var(--md-sys-shape-corner-full);
-
-  ion-segment-button {
-    --background: transparent;
-    --background-checked: var(--md-sys-color-secondary-container);
-    --color: var(--md-sys-color-on-surface);
-    --color-checked: var(--md-sys-color-on-secondary-container);
-
-    --border-radius: 0;
-    --border-width: 0 1px 0 0;
-    --border-color: var(--md-sys-color-outline);
-    --border-style: solid;
-
-    --indicator-height: 0;
-
-    --background-hover: var(--md-sys-color-on-surface);
-    --background-hover-opacity: var(--md-sys-state-hover-state-layer-opacity);
-    --background-focused: var(--md-sys-color-on-surface);
-    --background-focused-opacity: var(--md-sys-state-focus-state-layer-opacity);
-
-    &:first-of-type {
-      --border-radius: var(--md-sys-shape-corner-full) 0 0 var(--md-sys-shape-corner-full);
-    }
-
-    &:last-of-type {
-      --border-radius: 0 var(--md-sys-shape-corner-full) var(--md-sys-shape-corner-full) 0;
-      --border-width: 0;
-    }
-  }
+  border-bottom: 1px solid var(--md-sys-color-outline);
 }

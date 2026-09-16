@@ -1,4 +1,4 @@
 ion-content.md:not(.md3-disabled) {
-  // Use the default Ionic background (iOS default is light #f4f5f8).
-  // Color tokens are applied to components, not the base surface.
+  // Use the default Ionic background. Inset lists use color="light" on the
+  // list itself, not a global content surface override.
 }

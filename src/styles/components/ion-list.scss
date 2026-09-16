@@ -22,7 +22,7 @@ ion-list.md:not(.md3-disabled).list-inset {
     }
 
     &:not(:last-of-type):not(.item-lines-inset):not(.item-lines-none) {
-      --border-radius: var(--md-sys-shape-corner-extra-small);
+      --border-radius: 4px;
       --border-width: #{0px 0px 2px 0px};
       --inner-border-width: 0;
       --show-inset-highlight: 0;

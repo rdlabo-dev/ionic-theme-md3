@@ -5,7 +5,7 @@ ion-chip.md:not(.md3-disabled) {
 
   padding-inline-start: 16px;
   padding-inline-end: 16px;
-  border-radius: var(--md-sys-shape-corner-small);
+  border-radius: 8px;
 
   // A subtle state layer on hover/focus/press.
   &:not(.ion-color) {

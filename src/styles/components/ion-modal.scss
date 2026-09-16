@@ -1,8 +1,8 @@
 ion-modal.md:not(.md3-disabled) {
-  --box-shadow: var(--md-sys-elevation-level-3);
+  --box-shadow: var(--token-elevation-3);
 
   @media only screen and (min-width: 768px) and (min-height: 600px) {
-    --border-radius: var(--md-sys-shape-corner-extra-large);
+    --border-radius: 24px;
   }
 
   ion-toolbar {
@@ -32,7 +32,7 @@ ion-modal.md:not(.md3-disabled) {
   }
 
   &.modal-sheet {
-    --border-radius: var(--md-sys-shape-corner-extra-large);
+    --border-radius: 30px;
 
     ion-toolbar {
       &:first-of-type {

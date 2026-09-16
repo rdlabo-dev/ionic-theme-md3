@@ -1,7 +1,7 @@
 ion-searchbar.md:not(.md3-disabled) {
   --box-shadow: none;
-  --border-radius: var(--md-sys-shape-corner-extra-large);
-  --background: var(--md-sys-color-surface-container-highest);
+  --border-radius: 999px;
+  --background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent);
   --color: var(--md-sys-color-on-surface);
   --icon-color: var(--md-sys-color-on-surface-variant);
   --placeholder-color: var(--md-sys-color-on-surface-variant);

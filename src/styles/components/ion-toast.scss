@@ -2,6 +2,6 @@ ion-toast.md:not(.md3-disabled) {
   --background: var(--md-sys-color-inverse-surface);
   --color: var(--md-sys-color-inverse-on-surface);
   --button-color: var(--md-sys-color-inverse-primary);
-  --box-shadow: var(--md-sys-elevation-level-3);
-  --border-radius: var(--md-sys-shape-corner-extra-small);
+  --box-shadow: var(--token-elevation-3);
+  --border-radius: 8px;
 }

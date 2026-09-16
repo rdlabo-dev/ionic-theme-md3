@@ -4,14 +4,7 @@ ion-footer.md:not(.md3-disabled) {
 }
 
 ion-toolbar.md:not(.md3-disabled) {
-  // Surface background / on-surface text, with no bottom border.
-  --background: var(--md-sys-color-surface);
-  --color: var(--md-sys-color-on-surface);
-  --border-width: 0;
-  --border-color: transparent;
-  --min-height: 56px;
-
-  // Respect the Ionic `color` prop and help child buttons/labels inherit it.
+  // Respect the Ionic `color` prop.
   &.ion-color {
     --background: var(--ion-color-base);
     --color: var(--ion-color-contrast);
@@ -71,42 +64,6 @@ ion-toolbar.md:not(.md3-disabled) {
         width: 40px;
         height: 40px;
       }
-    }
-  }
-
-  // MD3 top app bar variants.
-  // These are opt-in classes so the default 56px Ionic height stays intact.
-  &.toolbar-small {
-    --min-height: 64px;
-
-    ion-title {
-      font-size: var(--md-sys-typescale-title-large-size);
-      font-weight: var(--md-sys-typescale-title-large-weight);
-      letter-spacing: var(--md-sys-typescale-title-large-tracking);
-    }
-  }
-
-  &.toolbar-medium {
-    --min-height: 112px;
-    --padding-bottom: 24px;
-
-    ion-title {
-      align-self: end;
-      font-size: var(--md-sys-typescale-headline-small-size);
-      font-weight: var(--md-sys-typescale-headline-small-weight);
-      letter-spacing: var(--md-sys-typescale-headline-small-tracking);
-    }
-  }
-
-  &.toolbar-large {
-    --min-height: 152px;
-    --padding-bottom: 24px;
-
-    ion-title {
-      align-self: end;
-      font-size: var(--md-sys-typescale-headline-medium-size);
-      font-weight: var(--md-sys-typescale-headline-medium-weight);
-      letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
     }
   }
 }

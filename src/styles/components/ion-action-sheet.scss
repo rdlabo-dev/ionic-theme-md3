@@ -5,8 +5,8 @@ ion-action-sheet.md:not(.md3-disabled) {
 
   .action-sheet-container {
     overflow: hidden;
-    border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
-    box-shadow: var(--md-sys-elevation-level-1);
+    border-radius: 28px 28px 0 0;
+    box-shadow: var(--token-elevation-1);
 
     .action-sheet-title {
       padding: 24px 24px 16px;
