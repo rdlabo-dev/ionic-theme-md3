@@ -1,0 +1,121 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e5]:
+  - generic:
+    - navigation "menu" [ref=e6]:
+      - list [ref=e11]:
+        - group [ref=e12]:
+          - listitem [ref=e13]:
+            - link "Index" [ref=e14] [cursor=pointer]:
+              - /url: /main/index
+              - img [ref=e15]:
+                - img [ref=e17]
+              - generic [ref=e23]: Index
+          - listitem [ref=e24]:
+            - link "Docs" [ref=e25] [cursor=pointer]:
+              - /url: /main/docs
+              - img [ref=e26]:
+                - img [ref=e28]
+              - generic [ref=e35]: Docs
+          - listitem [ref=e36]:
+            - link "Library" [ref=e37] [cursor=pointer]:
+              - /url: /main/album
+              - img [ref=e38]:
+                - img [ref=e40]
+              - generic [ref=e45]: Library
+          - listitem [ref=e46]:
+            - link "Settings" [ref=e47] [cursor=pointer]:
+              - /url: /main/settings
+              - img [ref=e48]:
+                - img [ref=e50]
+              - generic [ref=e55]: Settings
+    - generic [ref=e57]:
+      - generic [ref=e60]:
+        - banner [ref=e61]:
+          - generic [ref=e63]:
+            - button "back" [ref=e65] [cursor=pointer]:
+              - generic [ref=e66]:
+                - img:
+                  - generic:
+                    - img
+            - generic [ref=e69]:
+              - generic: item-list
+        - main [ref=e70]:
+          - generic [ref=e72]:
+            - generic:
+              - list [ref=e73]:
+                - group [ref=e74]:
+                  - listitem [ref=e75]:
+                    - generic [ref=e79]:
+                      - img [ref=e80]:
+                        - img [ref=e82]
+                      - img [ref=e85]:
+                        - img [ref=e87]
+                      - heading "item-list" [level=2] [ref=e90]
+                      - code [ref=e92]: This page is a component demo for @rdlabo/ionic-theme-md3.
+              - list [ref=e93]:
+                - generic [ref=e96]: Inset List
+                - group [ref=e97]:
+                  - listitem [ref=e98]:
+                    - generic [ref=e102]: Basic Item
+                  - listitem [ref=e103]:
+                    - generic [ref=e107]: Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                - generic [ref=e108]:
+                  - generic: Note additional information.
+                - generic [ref=e109]:
+                  - generic: Primary note additional information.
+                - generic [ref=e110]:
+                  - generic: Danger note additional information.
+              - list [ref=e111]:
+                - generic [ref=e114]: Inset List 2 Lines with danger header
+                - group [ref=e115]:
+                  - listitem [ref=e116]:
+                    - generic [ref=e119]:
+                      - generic:
+                        - generic [ref=e120]: Basic Item
+                        - generic [ref=e121]:
+                          - generic: Basic Item note
+                  - listitem [ref=e122]:
+                    - generic [ref=e125]:
+                      - generic:
+                        - generic [ref=e126]: Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        - generic [ref=e127]:
+                          - generic: Multi-line note
+                - generic [ref=e128]:
+                  - generic: Note additional information.
+              - list [ref=e129]:
+                - generic [ref=e132]: Default List
+                - group [ref=e133]:
+                  - listitem [ref=e134]:
+                    - generic [ref=e138]: Basic Item
+                  - listitem [ref=e139]:
+                    - generic [ref=e143]: Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                - generic: Note additional information.
+      - tablist [ref=e144]:
+        - generic:
+          - tab "Index" [selected] [ref=e146] [cursor=pointer]:
+            - generic [ref=e147]:
+              - generic:
+                - img [ref=e148]:
+                  - img [ref=e150]
+                - generic [ref=e154]: Index
+          - tab "Docs" [ref=e156] [cursor=pointer]:
+            - generic [ref=e157]:
+              - generic:
+                - img [ref=e158]:
+                  - img [ref=e160]
+                - generic [ref=e165]: Docs
+          - tab "Library" [ref=e167] [cursor=pointer]:
+            - generic [ref=e168]:
+              - generic:
+                - img [ref=e169]:
+                  - img [ref=e171]
+                - generic [ref=e174]: Library
+          - tab "Settings" [ref=e176] [cursor=pointer]:
+            - generic [ref=e177]:
+              - generic:
+                - img [ref=e178]:
+                  - img [ref=e180]
+                - generic [ref=e182]: Settings
+```

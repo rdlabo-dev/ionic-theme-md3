@@ -1,0 +1,105 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e5]:
+    - generic:
+      - navigation "menu" [ref=e6]:
+        - list [ref=e11]:
+          - group [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Index" [ref=e14] [cursor=pointer]:
+                - /url: /main/index
+                - img [ref=e15]:
+                  - img [ref=e17]
+                - generic [ref=e23]: Index
+            - listitem [ref=e24]:
+              - link "Docs" [ref=e25] [cursor=pointer]:
+                - /url: /main/docs
+                - img [ref=e26]:
+                  - img [ref=e28]
+                - generic [ref=e35]: Docs
+            - listitem [ref=e36]:
+              - link "Library" [ref=e37] [cursor=pointer]:
+                - /url: /main/album
+                - img [ref=e38]:
+                  - img [ref=e40]
+                - generic [ref=e45]: Library
+            - listitem [ref=e46]:
+              - link "Settings" [ref=e47] [cursor=pointer]:
+                - /url: /main/settings
+                - img [ref=e48]:
+                  - img [ref=e50]
+                - generic [ref=e55]: Settings
+      - generic [ref=e57]:
+        - generic [ref=e60]:
+          - banner [ref=e61]:
+            - generic [ref=e63]:
+              - button "back" [ref=e65] [cursor=pointer]:
+                - generic [ref=e66]:
+                  - img:
+                    - generic:
+                      - img
+              - generic [ref=e69]:
+                - generic: toast
+          - main [ref=e70]:
+            - generic [ref=e72]:
+              - generic:
+                - list [ref=e73]:
+                  - group [ref=e74]:
+                    - listitem [ref=e75]:
+                      - generic [ref=e79]:
+                        - img [ref=e80]:
+                          - img [ref=e82]
+                        - heading "toast" [level=2] [ref=e85]
+                        - code [ref=e87]: This page is a component demo for @rdlabo/ionic-theme-md3.
+                - list [ref=e88]:
+                  - group [ref=e89]:
+                    - listitem [ref=e90]:
+                      - button "present:top" [ref=e91] [cursor=pointer]:
+                        - generic [ref=e93]:
+                          - generic: present:top
+                    - listitem [ref=e94]:
+                      - button "present:middle" [ref=e95] [cursor=pointer]:
+                        - generic [ref=e97]:
+                          - generic: present:middle
+                    - listitem [ref=e98]:
+                      - button "present:bottom" [ref=e99] [cursor=pointer]:
+                        - generic [ref=e101]:
+                          - generic: present:bottom
+                    - listitem [ref=e102]:
+                      - button "present:anchor" [ref=e103] [cursor=pointer]:
+                        - generic [ref=e105]:
+                          - generic: present:anchor
+        - tablist [ref=e106]:
+          - generic:
+            - tab "Index" [selected] [ref=e108] [cursor=pointer]:
+              - generic [ref=e109]:
+                - generic:
+                  - img [ref=e110]:
+                    - img [ref=e112]
+                  - generic [ref=e116]: Index
+            - tab "Docs" [ref=e118] [cursor=pointer]:
+              - generic [ref=e119]:
+                - generic:
+                  - img [ref=e120]:
+                    - img [ref=e122]
+                  - generic [ref=e127]: Docs
+            - tab "Library" [ref=e129] [cursor=pointer]:
+              - generic [ref=e130]:
+                - generic:
+                  - img [ref=e131]:
+                    - img [ref=e133]
+                  - generic [ref=e136]: Library
+            - tab "Settings" [ref=e138] [cursor=pointer]:
+              - generic [ref=e139]:
+                - generic:
+                  - img [ref=e140]:
+                    - img [ref=e142]
+                  - generic [ref=e144]: Settings
+  - generic [ref=e146]:
+    - status [ref=e147]:
+      - generic [ref=e148]: Hello World!
+    - button "Close" [ref=e150]:
+      - generic [ref=e151]: Close
+```
