@@ -1,4 +1,4 @@
 ion-content.md:not(.md3-disabled) {
-  --background: var(--md-sys-color-surface);
-  --color: var(--md-sys-color-on-surface);
+  // Use the default Ionic background (iOS default is light #f4f5f8).
+  // Color tokens are applied to components, not the base surface.
 }
