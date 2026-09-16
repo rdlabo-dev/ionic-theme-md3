@@ -1,37 +1,45 @@
 ion-toggle.md:not(.md3-disabled) {
   --handle-width: 24px;
   --handle-height: 24px;
-  --handle-border-radius: 16px;
+  --handle-border-radius: 50%;
   --border-radius: 16px;
   --handle-box-shadow: none;
-  --handle-spacing: 2px;
-  --handle-transition: transform var(--token-expressive-default-special), background-color var(--token-expressive-default-effects);
-  --track-background: var(--ion-background-color-step-100, #e6e0e9);
-  --handle-background: var(--ion-text-color-step-450, #79747e);
+  --handle-spacing: 4px;
+  --handle-transition:
+    transform var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    background-color var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+
+  // M3 switch track: surface-container-highest when off, primary when on.
+  --track-background: var(--md-sys-color-surface-container-highest);
+  --track-background-checked: var(--md-sys-color-primary);
+
+  // M3 switch handle: outline when off, on-primary when on.
+  --handle-background: var(--md-sys-color-outline);
+  --handle-background-checked: var(--md-sys-color-on-primary);
 
   &::part(track) {
     box-sizing: border-box;
     min-height: 32px;
     min-width: 52px;
-    border: 2px solid var(--ion-text-color-step-450, #79747e);
+    border: 2px solid var(--md-sys-color-outline);
   }
 
   &.toggle-checked {
-    --track-background-checked: var(--ion-color-base);
-    --handle-background-checked: var(--ion-color-contrast);
+    --track-background-checked: var(--md-sys-color-primary);
+    --handle-background-checked: var(--md-sys-color-on-primary);
 
     &::part(track) {
-      border-color: var(--ion-color-base);
+      border-color: var(--md-sys-color-primary);
     }
   }
 
   &:not(.ion-color) {
     &.toggle-checked {
-      --track-background-checked: var(--ion-color-primary);
-      --handle-background-checked: var(--ion-color-primary-contrast);
+      --track-background-checked: var(--md-sys-color-primary);
+      --handle-background-checked: var(--md-sys-color-on-primary);
 
       &::part(track) {
-        border-color: var(--ion-color-primary);
+        border-color: var(--md-sys-color-primary);
       }
     }
   }

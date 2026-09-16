@@ -1,7 +1,10 @@
 ion-searchbar.md:not(.md3-disabled) {
   --box-shadow: none;
-  --border-radius: 999px;
-  --background: rgba(var(--ion-color-contrast-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.08);
-  --color: rgb(var(--ion-color-contrast-rgb, var(--ion-text-color-rgb, 0, 0, 0)));
-  --icon-color: rgb(var(--ion-color-contrast-rgb, var(--ion-text-color-rgb, 0, 0, 0)));
+  --border-radius: var(--md-sys-shape-corner-extra-large);
+  --background: var(--md-sys-color-surface-container-highest);
+  --color: var(--md-sys-color-on-surface);
+  --icon-color: var(--md-sys-color-on-surface-variant);
+  --placeholder-color: var(--md-sys-color-on-surface-variant);
+  --clear-button-color: var(--md-sys-color-on-surface-variant);
+  --cancel-button-color: var(--md-sys-color-on-surface-variant);
 }
