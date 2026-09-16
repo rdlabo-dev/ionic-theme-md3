@@ -39,7 +39,7 @@ for (const direction of ['ltr', 'rtl'] as const) {
       const handle = range.shadowRoot!.querySelector<HTMLElement>('[part~="knob-handle"]')!;
       return getComputedStyle(handle)[side];
     }, handleSide);
-    expect(handlePosition).toBe('50%');
+    expect(handlePosition).toBe('100px');
 
     // With the default Ionic range geometry the bar has no extra inline margins.
     const dualMargins = await page.locator('#dual-range').evaluate((range) => {
