@@ -168,6 +168,25 @@
   &.button-square {
     --border-radius: var(--md-sys-shape-corner-small);
   }
+
+  // Respect the Ionic `color` prop on any M3 variant.
+  &.ion-color {
+    --background: var(--ion-color-base);
+    --color: var(--ion-color-contrast);
+    --border-color: var(--ion-color-base);
+    --background-hover: var(--ion-color-contrast);
+    --background-focused: var(--ion-color-contrast);
+    --background-activated: var(--ion-color-contrast);
+
+    // Outlined / text buttons have a transparent background, so the state
+    // layer should be the user color itself, not its contrast.
+    &.button-outline,
+    &.button-clear {
+      --background-hover: var(--ion-color-base);
+      --background-focused: var(--ion-color-base);
+      --background-activated: var(--ion-color-base);
+    }
+  }
 }
 
 ion-button.md:not(.md3-disabled) {

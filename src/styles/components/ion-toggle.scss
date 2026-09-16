@@ -33,13 +33,14 @@ ion-toggle.md:not(.md3-disabled) {
     }
   }
 
-  &:not(.ion-color) {
+  // Respect the Ionic `color` prop.
+  &.ion-color {
     &.toggle-checked {
-      --track-background-checked: var(--md-sys-color-primary);
-      --handle-background-checked: var(--md-sys-color-on-primary);
+      --track-background-checked: var(--ion-color-base);
+      --handle-background-checked: var(--ion-color-contrast);
 
       &::part(track) {
-        border-color: var(--md-sys-color-primary);
+        border-color: var(--ion-color-base);
       }
     }
   }

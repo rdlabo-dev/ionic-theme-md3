@@ -1,7 +1,7 @@
 ion-card.md:not(.md3-disabled) {
   // Default to a M3 "filled" card.
   --background: var(--md-sys-color-surface-container-highest);
-  color: var(--md-sys-color-on-surface);
+  --color: var(--md-sys-color-on-surface);
   border-radius: var(--md-sys-shape-corner-large);
   box-shadow: none;
   box-sizing: border-box;
@@ -16,6 +16,12 @@ ion-card.md:not(.md3-disabled) {
   &.card-outlined {
     --background: var(--md-sys-color-surface);
     border: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  // Respect the Ionic `color` prop.
+  &.ion-color {
+    --background: var(--ion-color-base);
+    --color: var(--ion-color-contrast);
   }
 
   // Reduce internal list item padding so content lines up with card insets.

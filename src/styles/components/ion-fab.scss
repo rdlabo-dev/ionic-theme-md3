@@ -40,6 +40,15 @@ ion-fab.md:not(.md3-disabled) {
         --border-radius: 50%;
       }
     }
+
+    // Respect the Ionic `color` prop.
+    &.ion-color {
+      --background: var(--ion-color-base);
+      --color: var(--ion-color-contrast);
+      --background-hover: var(--ion-color-contrast);
+      --background-focused: var(--ion-color-contrast);
+      --background-activated: var(--ion-color-contrast);
+    }
   }
 
   &:has(.fab-button-small) {

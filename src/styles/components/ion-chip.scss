@@ -8,12 +8,25 @@ ion-chip.md:not(.md3-disabled) {
   border-radius: var(--md-sys-shape-corner-small);
 
   // A subtle state layer on hover/focus/press.
-  --background-hover: var(--md-sys-color-on-surface);
-  --background-hover-opacity: var(--md-sys-state-hover-state-layer-opacity);
-  --background-focused: var(--md-sys-color-on-surface);
-  --background-focused-opacity: var(--md-sys-state-focus-state-layer-opacity);
-  --background-activated: var(--md-sys-color-on-surface);
-  --background-activated-opacity: var(--md-sys-state-pressed-state-layer-opacity);
+  &:not(.ion-color) {
+    &:hover {
+      --background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, var(--md-sys-color-surface-container-low));
+    }
+
+    &:focus {
+      --background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, var(--md-sys-color-surface-container-low));
+    }
+
+    &.ion-activated {
+      --background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, var(--md-sys-color-surface-container-low));
+    }
+  }
+
+  // Respect the Ionic `color` prop.
+  &.ion-color {
+    --background: var(--ion-color-base);
+    --color: var(--ion-color-contrast);
+  }
 
   ion-icon {
     font-size: 18px;

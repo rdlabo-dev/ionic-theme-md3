@@ -11,6 +11,14 @@ ion-toolbar.md:not(.md3-disabled) {
   --border-color: transparent;
   --min-height: 56px;
 
+  // Respect the Ionic `color` prop and help child buttons/labels inherit it.
+  &.ion-color {
+    --background: var(--ion-color-base);
+    --color: var(--ion-color-contrast);
+    --ion-toolbar-color: var(--ion-color-contrast);
+    --ion-toolbar-background: var(--ion-color-base);
+  }
+
   ion-buttons[slot='start'],
   ion-back-button[slot='start'] {
     margin-inline-start: 16px;

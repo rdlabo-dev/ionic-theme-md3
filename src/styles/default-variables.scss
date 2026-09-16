@@ -269,12 +269,15 @@
     rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
 
   // Legacy token aliases (kept for backwards compatibility)
+  // md-sys-elevation-level-0..5 are new M3 levels. The old 0/1/3 align to them,
+  // and old 6 aligns to M3 level 5. Old 8/12 have no M3 equivalent, so their
+  // original values are kept verbatim.
   --token-elevation-0: var(--md-sys-elevation-level-0);
   --token-elevation-1: var(--md-sys-elevation-level-1);
   --token-elevation-3: var(--md-sys-elevation-level-3);
-  --token-elevation-6: var(--md-sys-elevation-level-4);
-  --token-elevation-8: var(--md-sys-elevation-level-5);
-  --token-elevation-12: var(--md-sys-elevation-level-5);
+  --token-elevation-6: var(--md-sys-elevation-level-5);
+  --token-elevation-8: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
+  --token-elevation-12: rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px;
 }
 
 // ---------------------------------------------------------------------------
