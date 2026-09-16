@@ -1,10 +1,22 @@
 ion-fab.md:not(.md3-disabled) {
   ion-fab-button {
+    // M3 FAB uses primary-container with on-primary-container content.
+    --background: var(--md-sys-color-primary-container);
+    --color: var(--md-sys-color-on-primary-container);
+    --border-radius: var(--md-sys-shape-corner-large);
+    --box-shadow: var(--md-sys-elevation-level-3);
+    --transition: border-radius var(--md-sys-motion-duration-medium-3) var(--md-sys-motion-easing-emphasized-decelerate);
+
+    // State layers use the on-container color.
+    --background-hover: var(--md-sys-color-on-primary-container);
+    --background-hover-opacity: var(--md-sys-state-hover-state-layer-opacity);
+    --background-focused: var(--md-sys-color-on-primary-container);
+    --background-focused-opacity: var(--md-sys-state-focus-state-layer-opacity);
+    --background-activated: var(--md-sys-color-on-primary-container);
+    --background-activated-opacity: var(--md-sys-state-pressed-state-layer-opacity);
+
     width: 56px;
     height: 56px;
-    --border-radius: 16px;
-    --transition: border-radius var(--token-expressive-fast-special);
-    --box-shadow: var(--token-elevation-3);
 
     ion-icon {
       width: 24px;
@@ -22,7 +34,8 @@ ion-fab.md:not(.md3-disabled) {
     &.fab-button-small {
       width: 40px;
       height: 40px;
-      --border-radius: 12px;
+      --border-radius: var(--md-sys-shape-corner-medium);
+
       &.fab-button-close-active {
         --border-radius: 50%;
       }

@@ -1,7 +1,24 @@
 ion-card.md:not(.md3-disabled) {
-  border-radius: 12px;
-  box-shadow: var(--token-elevation-1);
+  // Default to a M3 "filled" card.
+  --background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface);
+  border-radius: var(--md-sys-shape-corner-large);
+  box-shadow: none;
+  box-sizing: border-box;
 
+  // Elevated card variant.
+  &.card-elevated {
+    --background: var(--md-sys-color-surface-container-low);
+    box-shadow: var(--md-sys-elevation-level-1);
+  }
+
+  // Outlined card variant.
+  &.card-outlined {
+    --background: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  // Reduce internal list item padding so content lines up with card insets.
   ion-list ion-item {
     --padding-start: 0;
   }

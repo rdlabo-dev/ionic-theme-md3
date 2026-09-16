@@ -1,7 +1,19 @@
 ion-chip.md:not(.md3-disabled) {
+  // M3 chips use surface-container-low for the default "assist" style.
+  --background: var(--md-sys-color-surface-container-low);
+  --color: var(--md-sys-color-on-surface);
+
   padding-inline-start: 16px;
   padding-inline-end: 16px;
-  border-radius: 8px;
+  border-radius: var(--md-sys-shape-corner-small);
+
+  // A subtle state layer on hover/focus/press.
+  --background-hover: var(--md-sys-color-on-surface);
+  --background-hover-opacity: var(--md-sys-state-hover-state-layer-opacity);
+  --background-focused: var(--md-sys-color-on-surface);
+  --background-focused-opacity: var(--md-sys-state-focus-state-layer-opacity);
+  --background-activated: var(--md-sys-color-on-surface);
+  --background-activated-opacity: var(--md-sys-state-pressed-state-layer-opacity);
 
   ion-icon {
     font-size: 18px;
