@@ -4,7 +4,8 @@ import type { TransitionOptions } from './index';
 import { getIonPageElement } from './index';
 
 export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): Animation => {
-  const OFF_RIGHT = 40;
+  const isRTL = opts.enteringEl.ownerDocument.dir === 'rtl';
+  const OFF_END = isRTL ? -40 : 40;
   const CENTER = 0;
 
   const backDirection = opts.direction === 'back';
@@ -22,12 +23,12 @@ export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): 
     rootTransition
       .duration((opts.duration ?? 0) || 200)
       .easing('cubic-bezier(0.47,0,0.745,0.715)')
-      .fromTo('transform', `translateX(${OFF_RIGHT * -1}px)`, `translateX(${CENTER}px)`);
+      .fromTo('transform', `translateX(${OFF_END * -1}px)`, `translateX(${CENTER}px)`);
   } else {
     rootTransition
       .duration((opts.duration ?? 0) || 280)
       .easing('cubic-bezier(0.36,0.66,0.04,1)')
-      .fromTo('transform', `translateX(${OFF_RIGHT}px)`, `translateX(${CENTER}px)`)
+      .fromTo('transform', `translateX(${OFF_END}px)`, `translateX(${CENTER}px)`)
       .fromTo('opacity', 0.01, 1);
   }
 
@@ -46,7 +47,7 @@ export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): 
     stackedTransition
       .duration((opts.duration ?? 0) || 280)
       .easing('cubic-bezier(0.36,0.66,0.04,1)')
-      .fromTo('transform', `translateX(${CENTER}px)`, `translateX(${OFF_RIGHT * -1}px)`);
+      .fromTo('transform', `translateX(${CENTER}px)`, `translateX(${OFF_END * -1}px)`);
     rootTransition.addAnimation(stackedTransition);
   }
 
@@ -63,7 +64,7 @@ export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): 
           leavingPage.elements[0].style.setProperty('display', 'none');
         }
       })
-      .fromTo('transform', `translateX(${CENTER}px)`, `translateX(${OFF_RIGHT}px)`)
+      .fromTo('transform', `translateX(${CENTER}px)`, `translateX(${OFF_END}px)`)
       .fromTo('opacity', 1, 0);
 
     rootTransition.addAnimation(leavingPage);

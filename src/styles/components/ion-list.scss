@@ -58,5 +58,9 @@ ion-list.md:not(.md3-disabled).list-inset {
 }
 
 ion-list-header.md:not(.md3-disabled) {
-  padding-left: calc(var(--ion-safe-area-left, 0px) + 4px);
+  padding-inline-start: calc(var(--ion-safe-area-left, 0px) + 4px);
+
+  &:dir(rtl) {
+    padding-inline-start: calc(var(--ion-safe-area-right, 0px) + 4px);
+  }
 }
