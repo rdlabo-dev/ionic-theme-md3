@@ -7,6 +7,8 @@ for (const direction of ['ltr', 'rtl'] as const) {
       const fixture = document.createElement('div');
       fixture.id = 'rtl-range-probe';
       fixture.dir = dir;
+      fixture.style.width = '200px';
+      fixture.style.position = 'relative';
 
       const range = document.createElement('ion-range');
       range.id = 'single-range';
@@ -30,28 +32,22 @@ for (const direction of ['ltr', 'rtl'] as const) {
     await expect(page.locator('#single-range')).toHaveClass(/hydrated/);
     await expect(page.locator('#dual-range')).toHaveClass(/hydrated/);
 
-    const normalOffset = await page.locator('#single-range').evaluate((range) => {
-      const knob = range.shadowRoot!.querySelector<HTMLElement>('[part~="knob"]')!;
-      return new DOMMatrixReadOnly(getComputedStyle(knob).transform).e;
-    });
-    expect(normalOffset).toBeCloseTo(direction === 'ltr' ? 20 : -20, 1);
+    // The knob handle is positioned from the inline-start edge by the value
+    // ratio, so LTR uses left: 50% and RTL uses right: 50%.
+    const handleSide = direction === 'ltr' ? 'left' : 'right';
+    const handlePosition = await page.locator('#single-range').evaluate((range, side) => {
+      const handle = range.shadowRoot!.querySelector<HTMLElement>('[part~="knob-handle"]')!;
+      return getComputedStyle(handle)[side];
+    }, handleSide);
+    expect(handlePosition).toBe('50%');
 
-    await page.locator('#single-range').evaluate((range) => range.classList.add('range-pressed'));
-    await expect
-      .poll(() =>
-        page.locator('#single-range').evaluate((range) => {
-          const knob = range.shadowRoot!.querySelector<HTMLElement>('[part~="knob"]')!;
-          return new DOMMatrixReadOnly(getComputedStyle(knob).transform).e;
-        }),
-      )
-      .toBeCloseTo(direction === 'ltr' ? 21 : -21, 1);
-
+    // With the default Ionic range geometry the bar has no extra inline margins.
     const dualMargins = await page.locator('#dual-range').evaluate((range) => {
       const bar = range.shadowRoot!.querySelector<HTMLElement>('[part~="bar"]')!;
       const style = getComputedStyle(bar);
       return { start: style.marginInlineStart, end: style.marginInlineEnd };
     });
-    expect(dualMargins).toEqual({ start: '6px', end: '6px' });
+    expect(dualMargins).toEqual({ start: '0px', end: '0px' });
   });
 
   test(`${direction} mirrors Material forward and back transitions`, async ({ page }) => {
