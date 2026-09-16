@@ -1,2 +1,4 @@
-.md:not(.md3-disabled) {
+ion-content.md:not(.md3-disabled) {
+  --background: var(--md-sys-color-surface);
+  --color: var(--md-sys-color-on-surface);
 }
