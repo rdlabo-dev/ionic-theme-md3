@@ -15,14 +15,14 @@ ion-list.md:not(.md3-disabled).list-inset {
   @include structured-list.layout(8px, $group-border-radius);
 
   :is(#{structured-list.$groups}) ion-item {
-    --border-color: var(--ion-color-light, #fff);
+    --border-color: var(--md-sys-color-outline-variant);
 
     ion-note[slot='end'] {
       font-size: max(14px, 1rem);
     }
 
     &:not(:last-of-type):not(.item-lines-inset):not(.item-lines-none) {
-      --border-radius: 4px;
+      --border-radius: var(--md-sys-shape-corner-extra-small);
       --border-width: #{0px 0px 2px 0px};
       --inner-border-width: 0;
       --show-inset-highlight: 0;
@@ -40,7 +40,7 @@ ion-list.md:not(.md3-disabled).list-inset {
     }
 
     & > ion-input[labelplacement='floating'] {
-      transition: transform 200ms ease;
+      transition: transform var(--md-sys-motion-duration-short-2) var(--md-sys-motion-easing-standard);
 
       &:not(.label-floating) {
         transform: translateY(-7px);

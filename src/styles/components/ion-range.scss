@@ -1,27 +1,32 @@
 ion-range.md:not(.md3-disabled) {
   --height: 56px;
   --bar-height: 16px;
-  --bar-border-radius: 8px;
+  --bar-border-radius: var(--md-sys-shape-corner-small);
+  --bar-background: var(--md-sys-color-surface-container-highest);
+  --bar-background-active: var(--md-sys-color-primary);
 
-  --knob-background: var(--ion-color-primary);
+  --knob-background: var(--md-sys-color-on-primary);
   --knob-box-shadow: none;
-  --knob-border-radius: 8px;
+  --knob-border-radius: var(--md-sys-shape-corner-small);
   --knob-size: 44px;
 
-  --pin-background: var(--ion-background-color-step-700, #4a4458);
+  --pin-background: var(--md-sys-color-inverse-surface);
+  --pin-color: var(--md-sys-color-inverse-on-surface);
 
   &.range-has-pin {
     padding-top: 2.6rem;
   }
 
+  // M3 slider thumb: a thin 4dp vertical bar with a surface halo.
   &::part(knob) {
     width: 4px;
     transition:
-      width var(--token-expressive-fast-effects),
-      transform var(--token-expressive-fast-effects),
-      outline var(--token-expressive-fast-effects);
+      width var(--md-sys-motion-duration-short-2) var(--md-sys-motion-easing-emphasized-decelerate),
+      transform var(--md-sys-motion-duration-short-2) var(--md-sys-motion-easing-emphasized-decelerate),
+      outline var(--md-sys-motion-duration-short-2) var(--md-sys-motion-easing-emphasized-decelerate);
     will-change: width;
     transform: translateX(calc(var(--knob-size) / 2 - 2px));
+
     &:before {
       content: none;
     }
@@ -32,7 +37,10 @@ ion-range.md:not(.md3-disabled) {
   }
 
   &.ion-color {
-    --knob-background: var(--ion-color-base, var(--ion-color-primary));
+    --bar-background-active: var(--ion-color-base, var(--ion-color-primary));
+    --knob-background: var(--ion-color-contrast, var(--ion-color-primary-contrast));
+    --pin-background: var(--ion-color-base, var(--ion-color-primary));
+    --pin-color: var(--ion-color-contrast, var(--ion-color-primary-contrast));
   }
 
   &::part(tick),
@@ -51,10 +59,11 @@ ion-range.md:not(.md3-disabled) {
     }
 
     &:not(.range-value-min):not(.range-value-max)::part(knob) {
-      outline: 6px solid var(--ion-background-color, #ffffff);
+      outline: 6px solid var(--md-sys-color-surface);
     }
+
     &.range-pressed:not(.range-value-min):not(.range-value-max)::part(knob) {
-      outline: 7px solid var(--ion-background-color, #ffffff);
+      outline: 7px solid var(--md-sys-color-surface);
     }
 
     &:not(.range-value-max)::part(bar-active) {
@@ -102,10 +111,12 @@ ion-range.md:not(.md3-disabled) {
         border-end-start-radius: calc(var(--knob-border-radius) / 2);
         margin-inline-start: 6px;
       }
+
       &::part(bar) {
         width: calc(100% - 6px);
       }
     }
+
     &.range-value-max {
       &::part(bar),
       &::part(bar-active) {
@@ -113,22 +124,24 @@ ion-range.md:not(.md3-disabled) {
         border-end-end-radius: calc(var(--knob-border-radius) / 2);
         margin-inline-end: 6px;
       }
+
       &::part(bar) {
         width: calc(100% - 6px);
       }
     }
+
     &.range-value-min.range-value-max::part(bar) {
       width: calc(100% - 12px);
     }
 
     &:not(.range-value-min)::part(knob-lower),
     &:not(.range-value-max)::part(knob-upper) {
-      outline: 6px solid var(--ion-background-color, #ffffff);
+      outline: 6px solid var(--md-sys-color-surface);
     }
 
     &.range-pressed:not(.range-value-min)::part(knob-lower),
     &.range-pressed:not(.range-value-max)::part(knob-upper) {
-      outline: 7px solid var(--ion-background-color, #ffffff);
+      outline: 7px solid var(--md-sys-color-surface);
     }
   }
 
@@ -136,6 +149,7 @@ ion-range.md:not(.md3-disabled) {
     padding: 16px;
     min-width: 36px;
     top: 10px;
+
     &:before {
       content: none;
     }
