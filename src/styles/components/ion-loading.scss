@@ -1,6 +1,8 @@
 ion-loading.md:not(.md3-disabled) {
   .loading-wrapper {
-    border-radius: 24px;
-    box-shadow: var(--token-elevation-3);
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    box-shadow: var(--md-sys-elevation-level-3);
+    background: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface);
   }
 }

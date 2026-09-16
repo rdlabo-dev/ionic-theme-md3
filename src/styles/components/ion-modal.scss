@@ -1,13 +1,17 @@
 ion-modal.md:not(.md3-disabled) {
-  --box-shadow: var(--token-elevation-3);
+  --box-shadow: var(--md-sys-elevation-level-3);
+
   @media only screen and (min-width: 768px) and (min-height: 600px) {
-    --border-radius: 24px;
+    --border-radius: var(--md-sys-shape-corner-extra-large);
   }
+
   ion-toolbar {
     --min-height: 64px;
+
     &:first-of-type {
       padding-top: calc(var(--ion-safe-area-top, 0) + 6px);
     }
+
     padding-right: var(--ion-safe-area-right);
     padding-left: var(--ion-safe-area-left);
 
@@ -16,17 +20,19 @@ ion-modal.md:not(.md3-disabled) {
         width: 48px;
         height: 48px;
       }
+
       ion-icon[name='close-outline'] {
         font-size: 2rem;
       }
     }
   }
+
   &::part(handle) {
     width: 80px;
   }
 
   &.modal-sheet {
-    --border-radius: 30px;
+    --border-radius: var(--md-sys-shape-corner-extra-large);
 
     ion-toolbar {
       &:first-of-type {

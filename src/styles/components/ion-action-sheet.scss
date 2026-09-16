@@ -1,10 +1,12 @@
 ion-action-sheet.md:not(.md3-disabled) {
   --max-width: 640px;
+  --background: var(--md-sys-color-surface-container-low);
+  --color: var(--md-sys-color-on-surface);
 
   .action-sheet-container {
     overflow: hidden;
-    border-radius: 28px 28px 0 0;
-    box-shadow: var(--token-elevation-1);
+    border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
+    box-shadow: var(--md-sys-elevation-level-1);
 
     .action-sheet-title {
       padding: 24px 24px 16px;
@@ -12,6 +14,10 @@ ion-action-sheet.md:not(.md3-disabled) {
 
     .action-sheet-button {
       padding: 12px 24px;
+
+      &.action-sheet-destructive {
+        color: var(--md-sys-color-error);
+      }
     }
   }
 }
