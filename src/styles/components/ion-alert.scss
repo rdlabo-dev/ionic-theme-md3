@@ -10,6 +10,7 @@ ion-alert.md:not(.md3-disabled) {
     box-shadow: var(--token-elevation-3);
     background: var(--md-sys-color-surface-container-highest);
     color: var(--md-sys-color-on-surface);
+    outline: none;
 
     .alert-head {
       padding-top: 24px;
