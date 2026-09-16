@@ -1,15 +1,21 @@
 @mixin theme-button() {
+  // Default is a round/pill button. Match the iOS/Ionic shape.
+  --box-shadow: none;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --border-radius: 999px;
+
+  // Keep both selectors so Ionic's :not(.button-round) rules don't override.
+  &,
+  &:not(.button-round) {
+    --border-radius: 999px;
+  }
+
   // Typography uses M3 label-large / sentence case.
   font-size: var(--md-sys-typescale-label-large-size);
   font-weight: var(--md-sys-typescale-label-large-weight);
   letter-spacing: var(--md-sys-typescale-label-large-tracking);
   text-transform: none;
-
-  // Default shape is the M3 fully-rounded "pill".
-  --border-radius: var(--md-sys-shape-corner-full);
-  --padding-start: 16px;
-  --padding-end: 16px;
-  --box-shadow: none;
 
   // Default fill is "solid" in Ionic, which maps to M3 "filled".
   --background: var(--md-sys-color-primary);
@@ -26,7 +32,7 @@
   }
 
   ion-icon {
-    font-size: 20px;
+    font-size: 24px;
 
     &[slot='start'] {
       margin-inline-start: 0;
@@ -63,7 +69,7 @@
     }
 
     ion-icon {
-      font-size: 18px;
+      font-size: 20px;
 
       &[slot='start'] {
         margin-inline-start: 0;
@@ -153,7 +159,7 @@
     --background-activated: var(--md-sys-color-primary);
   }
 
-  // Icon-only buttons. The visible container is 40x40 with a 24dp icon.
+  // Icon-only buttons. Keep the iOS circular 40x40 with a 24dp icon.
   &.button-has-icon-only {
     &::part(native) {
       width: 40px;
@@ -164,9 +170,9 @@
     --padding-end: 0;
   }
 
-  // Square shape option. M3 square buttons use small corner radius.
+  // Square shape option. Match the iOS squared-button radius.
   &.button-square {
-    --border-radius: var(--md-sys-shape-corner-small);
+    --border-radius: 12px;
   }
 
   // Respect the Ionic `color` prop on any M3 variant.
@@ -194,7 +200,7 @@ ion-button.md:not(.md3-disabled) {
 }
 
 ion-back-button.md:not(.md3-disabled) {
-  --border-radius: var(--md-sys-shape-corner-full);
+  --border-radius: 999px;
   --min-height: 40px;
   --padding-start: 16px;
   --padding-end: 16px;
