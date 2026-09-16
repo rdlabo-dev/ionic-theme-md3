@@ -75,12 +75,25 @@ export class AlertPage implements OnInit {
           subHeader: undefined,
           message: 'Removing from Home Screen will keep the app in your App Library',
           buttons: [
-            ...alertUtil().buttons,
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              handler: () => {
+                console.log('Alert canceled');
+              },
+            },
+            {
+              text: 'Keep',
+              role: 'preferred',
+              handler: () => {
+                console.log('Alert kept');
+              },
+            },
             {
               text: 'Remove from Home Screen',
-              role: 'confirm',
+              role: 'destructive',
               handler: () => {
-                console.log('Alert confirmed');
+                console.log('Alert removed');
               },
             },
           ],

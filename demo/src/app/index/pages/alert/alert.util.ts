@@ -11,10 +11,17 @@ export const alertUtil = () => ({
       },
     },
     {
-      text: 'OK',
-      role: 'destructive',
+      text: 'Confirm',
+      role: 'preferred',
       handler: () => {
         console.log('Alert confirmed');
+      },
+    },
+    {
+      text: 'Delete',
+      role: 'destructive',
+      handler: () => {
+        console.log('Alert deleted');
       },
     },
   ],

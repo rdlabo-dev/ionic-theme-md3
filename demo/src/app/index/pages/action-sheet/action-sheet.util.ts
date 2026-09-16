@@ -11,6 +11,14 @@ export const actionSheetUtil = () => ({
       },
     },
     {
+      text: 'Confirm',
+      role: 'preferred',
+      icon: 'checkmark-outline',
+      data: {
+        action: 'confirm',
+      },
+    },
+    {
       text: 'Share',
       icon: 'share-outline',
       data: {

@@ -30,6 +30,30 @@ ion-alert.md:not(.md3-disabled) {
       &.alert-button-role-destructive {
         color: var(--md-sys-color-error);
       }
+
+      &.alert-button-role-preferred {
+        background: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
+        border-radius: 999px;
+        text-transform: none;
+
+        &:hover {
+          background: color-mix(
+            in srgb,
+            var(--md-sys-color-on-primary) var(--md-sys-state-hover-state-layer-opacity),
+            var(--md-sys-color-primary)
+          );
+        }
+
+        &.ion-activated,
+        &.ion-focused {
+          background: color-mix(
+            in srgb,
+            var(--md-sys-color-on-primary) var(--md-sys-state-pressed-state-layer-opacity),
+            var(--md-sys-color-primary)
+          );
+        }
+      }
     }
   }
 }

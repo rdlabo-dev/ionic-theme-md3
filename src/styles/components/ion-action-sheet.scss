@@ -18,6 +18,17 @@ ion-action-sheet.md:not(.md3-disabled) {
       &.action-sheet-destructive {
         color: var(--md-sys-color-error);
       }
+
+      &.action-sheet-preferred {
+        --button-color: var(--md-sys-color-on-primary);
+        --button-background: var(--md-sys-color-primary);
+        --button-background-activated: var(--md-sys-color-on-primary);
+        --button-background-activated-opacity: 0.12;
+        --button-background-hover: var(--md-sys-color-on-primary);
+        --button-background-hover-opacity: 0.08;
+        --button-background-focused: var(--md-sys-color-on-primary);
+        --button-background-focused-opacity: 0.12;
+      }
     }
   }
 }
