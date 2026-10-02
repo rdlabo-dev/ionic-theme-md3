@@ -1,5 +1,5 @@
-import type { Animation } from '@ionic/core';
-import { createAnimation } from '@ionic/core';
+import type { Animation } from '@ionic/core/components';
+import { createAnimation } from '@ionic/core/components/index.js';
 import type { TransitionOptions } from './index';
 import { getIonPageElement } from './index';
 

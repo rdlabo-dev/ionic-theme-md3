@@ -1,4 +1,4 @@
-import type { Animation, NavOptions } from '@ionic/core';
+import type { Animation, NavOptions } from '@ionic/core/components';
 
 export const getIonPageElement = (element: HTMLElement) => {
   if (element.classList.contains('ion-page')) {
