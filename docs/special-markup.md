@@ -55,6 +55,28 @@ This is an introductory group. Place regular list items in a separate `ion-item-
 </ion-list>
 ```
 
+## Tab accessory mini-player
+
+Add `.tab-accessory` to an `ion-toolbar` above `ion-tab-bar` (not inside `ion-content`). This theme styles the Material capsule. The same markup works with `@rdlabo/ionic-theme-ios27` (`ios-theme-tab-accessory` is kept as an alias). `.md3-disabled` opts an individual toolbar out. Call `enableTabAccessory()` once from this package for swipe-up; do not also call the ios27 copy.
+
+```html preview
+<ion-toolbar class="tab-accessory">
+  <ion-thumbnail slot="start">
+    <img data-tab-accessory="artwork" src="cover.jpg" alt="" />
+  </ion-thumbnail>
+  <ion-label>
+    <h2 data-tab-accessory="title">Now Playing</h2>
+    <p data-tab-accessory="subtitle">Artist</p>
+  </ion-label>
+  <ion-button slot="end" data-tab-accessory="play" fill="clear">
+    <ion-icon slot="icon-only" name="pause"></ion-icon>
+  </ion-button>
+  <ion-progress-bar value="0.4"></ion-progress-bar>
+</ion-toolbar>
+```
+
+Override layout with `--md3-tab-accessory-height`, `--md3-tab-accessory-inset`, `--md3-tab-accessory-radius`, and `--md3-tab-accessory-bottom`. Hosts that swipe the bar can wrap it in `.accessory-slide-clip`.
+
 ## Opting out
 
 Add `.md3-disabled` to an individual Ionic component when it must retain Ionic's standard Material styling.
