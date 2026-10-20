@@ -1,0 +1,41 @@
+name: Clean up closed PR reports
+'on':
+  pull_request:
+    branches:
+      - main
+      - ios26
+    types:
+      - closed
+permissions:
+  contents: read
+jobs:
+  cleanup-report:
+    if: github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+      - name: Remove PR report directory
+        run: |
+          if [ -d "gh-pages/pr-${{ github.event.pull_request.number }}" ]; then
+            rm -rf gh-pages/pr-${{ github.event.pull_request.number }}
+            echo "Removed report directory for PR #${{ github.event.pull_request.number }}"
+          else
+            echo "No report directory found for PR #${{ github.event.pull_request.number }}"
+          fi
+      - name: Deploy to GitHub Pages
+        if: hashFiles('gh-pages/**') != ''
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./gh-pages
+          keep_files: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: 'Remove test report for closed PR #${{ github.event.pull_request.number }}'

@@ -4,14 +4,16 @@ on:
   pull_request:
     branches:
       - main
-    types: [opened, synchronize, closed]
+    types: [opened, synchronize]
 
 permissions:
   contents: read
 
 jobs:
   test:
-    if: github.event.action != 'closed'
+    needs:
+      - ci-reuse
+    if: "${{ (needs.ci-reuse.result != 'success' && !cancelled()) || ((github.event.action != 'closed') && needs.ci-reuse.outputs.reuse != 'true') }}"
     # ios27 uses 10, but this PR's large visual diff + 2 retries exceeds that.
     timeout-minutes: 20
     runs-on: ubuntu-latest
@@ -28,6 +30,9 @@ jobs:
     container:
       image: mcr.microsoft.com/playwright:v1.58.2-noble
     steps:
+      - name: Fail if tree verification failed
+        if: needs.ci-reuse.result != 'success'
+        run: exit 1
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
@@ -53,7 +58,7 @@ jobs:
       - name: Run Playwright tests
         run: |
           if [ "${{ matrix.ionic-major }}" = "8" ]; then
-            PLAYWRIGHT_JSON_OUTPUT_NAME=e2e/screenshot.spec.ts-ionic8.json npm run test:e2e:visual -- --reporter=json,html
+            PLAYWRIGHT_JSON_OUTPUT_NAME=e2e/screenshot.spec.ts-ionic8.json npm run test:e2e -- --reporter=json,html
           else
             PLAYWRIGHT_JSON_OUTPUT_NAME=e2e/screenshot.spec.ts-ionic9.json npm run test:e2e -- --reporter=json,html
           fi
@@ -210,37 +215,94 @@ jobs:
               });
             }
 
-  cleanup-report:
-    if: >-
-      github.event.action == 'closed' &&
-      github.event.pull_request.head.repo.full_name == github.repository
+  ci-reuse:
+    name: Verify tested tree
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
-      contents: write
+      contents: read
+      actions: read
+      pull-requests: read
+    outputs:
+      reuse: ${{ steps.lookup.outputs.reuse }}
     steps:
-      - name: Checkout gh-pages
-        uses: actions/checkout@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: gh-pages
-          path: gh-pages
-        continue-on-error: true
-
-      - name: Remove PR report directory
-        run: |
-          if [ -d "gh-pages/pr-${{ github.event.pull_request.number }}" ]; then
-            rm -rf gh-pages/pr-${{ github.event.pull_request.number }}
-            echo "Removed report directory for PR #${{ github.event.pull_request.number }}"
-          else
-            echo "No report directory found for PR #${{ github.event.pull_request.number }}"
-          fi
-
-      - name: Deploy to GitHub Pages
-        if: hashFiles('gh-pages/**') != ''
-        uses: peaceiris/actions-gh-pages@v4
+          persist-credentials: false
+      - name: Test CI reuse guards
+        run: node --test .github/scripts/ci-tree-reuse.test.mjs
+      - name: Record the actual complete checkout
+        id: tree
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./gh-pages
-          keep_files: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Remove test report for closed PR #${{ github.event.pull_request.number }}'
+          script: |
+            const { execFileSync } = await import('node:child_process');
+            const { writeFileSync } = await import('node:fs');
+            const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
+            const tree = git('rev-parse', 'HEAD^{tree}');
+            const commit = git('rev-parse', 'HEAD');
+            core.setOutput('tree', tree);
+            core.setOutput('commit', commit);
+            writeFileSync(`${process.env.RUNNER_TEMP}/ci-tree.txt`, `${commit}\n${tree}\n`);
+      - name: Reuse only the latest successful PR CI for this tree
+        id: lookup
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+        env:
+          TREE: ${{ steps.tree.outputs.tree }}
+        with:
+          script: |
+            const { resolveReuse } = await import(`${process.env.GITHUB_WORKSPACE}/.github/scripts/ci-tree-reuse.mjs`);
+            const result = await resolveReuse(github, context, process.env.TREE, 'e2e-pull_request.yml');
+            core.setOutput('reuse', String(result.reuse));
+            if (result.reuse) {
+              await core.summary.addHeading('Reused PR validation').addLink('Latest successful PR CI', result.url)
+                .addRaw(`\n\nComplete repository tree: ${result.tree}\n`).write();
+            } else {
+              core.info(result.reason);
+            }
+  ci-result:
+    name: CI result
+    if: ${{ always() }}
+    needs:
+      - ci-reuse
+      - test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Require executed tests or verified reuse
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+          REUSE: ${{ needs.ci-reuse.outputs.reuse }}
+        with:
+          script: |
+            const { requireResults } = await import(`${process.env.GITHUB_WORKSPACE}/.github/scripts/ci-tree-reuse.mjs`);
+            requireResults(process.env.REUSE === 'true', JSON.parse(process.env.NEEDS), ["test"], []);
+      - name: Record the actual complete checkout
+        id: tree
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+        with:
+          script: |
+            const { execFileSync } = await import('node:child_process');
+            const { writeFileSync } = await import('node:fs');
+            const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
+            const tree = git('rev-parse', 'HEAD^{tree}');
+            const commit = git('rev-parse', 'HEAD');
+            core.setOutput('tree', tree);
+            core.setOutput('commit', commit);
+            writeFileSync(`${process.env.RUNNER_TEMP}/ci-tree.txt`, `${commit}\n${tree}\n`);
+        if: github.event_name == 'pull_request' && github.event.action != 'closed' && !contains(needs.*.result, 'skipped')
+      - name: Record PR checkout evidence
+        if: github.event_name == 'pull_request' && github.event.action != 'closed' && !contains(needs.*.result, 'skipped')
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: ci-tree-pr-${{ github.event.pull_request.number }}-${{ steps.tree.outputs.tree }}-${{ steps.tree.outputs.commit
+            }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/ci-tree.txt
+          if-no-files-found: error
+          retention-days: 30
